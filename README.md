@@ -4,7 +4,7 @@ WIP CIS Microsoft Azure Foundations Benchmark
 
 NOTICE
 
-© 2018 The MITRE Corporation.
+© 2020 The MITRE Corporation.
 
 Approved for Public Release; Distribution Unlimited. Case Number 18-3678.
 NOTICE
