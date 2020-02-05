@@ -17,6 +17,12 @@ control 'cis-azure-foundations-9.2' do
     tag "fix": "Set 'AuditState' to 'Enabled'
     Disable direct RDP access to your Azure Virtual Machines from the Internet. After direct RDP access from the Internet is disabled, you have other options you can use to access these virtual machines for remote management: Point-to-site VPN, Site-to-site VPM, and ExpressRoute.
     "
-
+    azurerm_resource_groups.names.each do |rg_name|
+        azurerm_storage_accounts(resource_group: rg_name).names.each do |sa_name|
+            describe azurerm_network_security_group(resource_group: rg_name, name: sa_name) do
+                it { should allow_rdp_from_internet }
+            end
+        end
+      end
   
   end
