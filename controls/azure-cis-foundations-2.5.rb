@@ -1,4 +1,4 @@
-control "azure-cis-9.2-control-2.5" do
+control "azure-cis-foundations-2.5" do
   title "Ensure ASC Default policy setting \"Monitor Endpoint Protection\" is
 not \"Disabled\""
   desc  "Enable Endpoint protection recommendations for virtual machines."

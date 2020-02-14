@@ -1,4 +1,4 @@
-control "azure-cis-9.2-control-1.3" do
+control "azure-cis-foundations-1.3" do
   title "Ensure that there are no guest users"
   desc  "Do not add guest users if not needed."
   desc  "rationale", "Azure AD is extended to include Azure AD B2B

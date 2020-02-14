@@ -1,4 +1,4 @@
-control "azure-cis-9.2-control-5.1.3" do
+control "azure-cis-foundations-5.1.3" do
   title "Ensure audit profile captures all the activities"
   desc  "The log profile should be configured to export all activities from the
 control/management plane."

@@ -1,4 +1,4 @@
-control "azure-cis-9.2-control-4.13" do
+control "azure-cis-foundations-4.13" do
   title "Ensure 'Enforce SSL connection' is set to 'ENABLED' for PostgreSQL
 Database Server"
   desc  "Enable `SSL connection` on `PostgreSQL` Servers."

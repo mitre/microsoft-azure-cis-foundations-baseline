@@ -1,4 +1,4 @@
-control "azure-cis-9.2-control-2.13" do
+control "azure-cis-foundations-2.13" do
   title "Ensure ASC Default policy setting \"Monitor Adaptive Application
 Whitelisting\" is not \"Disabled\""
   desc  "Enable adaptive application controls."

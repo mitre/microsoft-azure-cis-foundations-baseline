@@ -1,4 +1,4 @@
-control "azure-cis-9.2-control-4.1" do
+control "azure-cis-foundations-4.1" do
   title "Ensure SQL server's TDE protector is encrypted with BYOK (Use your own
 key)"
   desc  "TDE with BYOK support provides increased transparency and control over

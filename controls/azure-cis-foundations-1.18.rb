@@ -1,4 +1,4 @@
-control "azure-cis-9.2-control-1.18" do
+control "azure-cis-foundations-1.18" do
   title "Ensure that 'Users who can manage security groups' is set to 'None'"
   desc  "Restrict security group management to administrators only."
   desc  "rationale", "Restricting security group management to administrators

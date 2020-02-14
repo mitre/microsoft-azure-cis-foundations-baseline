@@ -1,4 +1,4 @@
-control "azure-cis-9.2-control-5.1.4" do
+control "azure-cis-foundations-5.1.4" do
   title "Ensure the log profile captures activity logs for all regions
 including global"
   desc  "Configure the log profile to export activities from all Azure

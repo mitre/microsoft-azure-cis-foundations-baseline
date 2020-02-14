@@ -1,4 +1,4 @@
-control "azure-cis-9.2-control-9.4" do
+control "azure-cis-foundations-9.4" do
   title "Ensure the web app has 'Client Certificates (Incoming client
 certificates)' set to 'On'"
   desc  "Client certificates allow for the app to request a certificate for

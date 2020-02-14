@@ -1,4 +1,4 @@
-control "azure-cis-9.2-control-8.3" do
+control "azure-cis-foundations-8.3" do
   title "Ensure that Resource Locks are set for mission critical Azure
 resources"
   desc  "Resource Manager Locks provide a way for administrators to lock down

@@ -1,4 +1,4 @@
-control "azure-cis-9.2-control-8.1" do
+control "azure-cis-foundations-8.1" do
   title "Ensure that the expiration date is set on all keys"
   desc  "Ensure that all keys in Azure Key Vault have an expiration time set."
   desc  "rationale", "Azure Key Vault enables users to store and use

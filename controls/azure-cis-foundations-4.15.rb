@@ -1,4 +1,4 @@
-control "azure-cis-9.2-control-4.15" do
+control "azure-cis-foundations-4.15" do
   title "Ensure server parameter 'log_disconnections' is set to 'ON' for
 PostgreSQL Database Server"
   desc  "Enable `log_disconnections` on `PostgreSQL Servers`."

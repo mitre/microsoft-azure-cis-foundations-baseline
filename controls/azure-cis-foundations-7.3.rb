@@ -1,4 +1,4 @@
-control "azure-cis-9.2-control-7.3" do
+control "azure-cis-foundations-7.3" do
   title "Ensure that 'Unattached disks' are encrypted"
   desc  "Ensure that unattached disks in a subscription are encrypted."
   desc  "rationale", "

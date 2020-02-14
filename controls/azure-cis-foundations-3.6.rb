@@ -1,4 +1,4 @@
-control "azure-cis-9.2-control-3.6" do
+control "azure-cis-foundations-3.6" do
   title "Ensure that 'Public access level' is set to Private for blob
 containers"
   desc  "Disable anonymous access to blob containers."

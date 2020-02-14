@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-control 'azure-cis-9.2-control-6.2' do
+control 'azure-cis-foundations-6.2' do
   title 'Ensure that SSH access is restricted from the internet'
   desc  'Disable SSH access on network security groups from the Internet.'
   desc  'rationale', "The potential security problem with using SSH over the

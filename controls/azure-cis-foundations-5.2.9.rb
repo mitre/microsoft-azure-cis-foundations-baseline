@@ -1,4 +1,4 @@
-control "azure-cis-9.2-control-5.2.9" do
+control "azure-cis-foundations-5.2.9" do
   title "Ensure that Activity Log Alert exists for Update Security Policy"
   desc  "Create an activity log alert for the Update Security Policy event."
   desc  "rationale", "Monitoring for Update Security Policy events gives

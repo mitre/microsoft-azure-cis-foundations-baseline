@@ -1,4 +1,4 @@
-control "azure-cis-9.2-control-7.5" do
+control "azure-cis-foundations-7.5" do
   title "Ensure that the latest OS Patches for all Virtual Machines are applied"
   desc  "Ensure that the latest OS patches for all virtual machines are
 applied."

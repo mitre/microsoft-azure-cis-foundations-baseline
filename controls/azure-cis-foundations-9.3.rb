@@ -1,4 +1,4 @@
-control "azure-cis-9.2-control-9.3" do
+control "azure-cis-foundations-9.3" do
   title "Ensure web app is using the latest version of TLS encryption"
   desc  "The TLS(Transport Layer Security) protocol secures transmission of
 data over the internet using standard encryption technology. Encryption should

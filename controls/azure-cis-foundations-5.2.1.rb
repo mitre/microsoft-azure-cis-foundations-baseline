@@ -1,4 +1,4 @@
-control "azure-cis-9.2-control-5.2.1" do
+control "azure-cis-foundations-5.2.1" do
   title "Ensure that Activity Log Alert exists for Create Policy Assignment"
   desc  "Create an activity log alert for the Create Policy Assignment event."
   desc  "rationale", "Monitoring for create policy assignment events gives

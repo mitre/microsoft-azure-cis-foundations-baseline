@@ -1,4 +1,4 @@
-control "azure-cis-9.2-control-1.2" do
+control "azure-cis-foundations-1.2" do
   title "Ensure that 'Users who can manage Office 365 groups' is set to 'None'"
   desc  "Restrict Office 365 group management to administrators only."
   desc  "rationale", "Restricting Office 365 group management to administrators

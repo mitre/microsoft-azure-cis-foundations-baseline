@@ -1,4 +1,4 @@
-control "azure-cis-9.2-control-2.2" do
+control "azure-cis-foundations-2.2" do
   title "Ensure that 'Automatic provisioning of monitoring agent' is set to
 'On'"
   desc  "Enable automatic provisioning of the monitoring agent to collect

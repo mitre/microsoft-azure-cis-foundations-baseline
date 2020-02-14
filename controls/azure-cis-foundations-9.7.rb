@@ -1,4 +1,4 @@
-control "azure-cis-9.2-control-9.7" do
+control "azure-cis-foundations-9.7" do
   title "Ensure that 'PHP version' is the latest, if used to run the web app"
   desc  "Periodically newer versions are released for PHP software either due
 to security flaws or to include additional functionality. Using the latest PHP

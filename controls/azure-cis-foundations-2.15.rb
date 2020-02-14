@@ -1,4 +1,4 @@
-control "azure-cis-9.2-control-2.15" do
+control "azure-cis-foundations-2.15" do
   title "Ensure ASC Default policy setting \"Monitor SQL Encryption\" is not
 \"Disabled\""
   desc  "Enable SQL encryption recommendations."

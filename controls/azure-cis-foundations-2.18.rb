@@ -1,4 +1,4 @@
-control "azure-cis-9.2-control-2.18" do
+control "azure-cis-foundations-2.18" do
   title "Ensure that 'Send email notification for high severity alerts' is set
 to 'On'"
   desc  "Enable emailing security alerts to the security contact."

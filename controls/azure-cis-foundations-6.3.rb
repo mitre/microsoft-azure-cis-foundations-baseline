@@ -1,4 +1,4 @@
-control "azure-cis-9.2-control-6.3" do
+control "azure-cis-foundations-6.3" do
   title "Ensure no SQL Databases allow ingress 0.0.0.0/0 (ANY IP)"
   desc  "Ensure that no SQL Databases allow ingress from 0.0.0.0/0 (ANY IP)."
   desc  "rationale", "

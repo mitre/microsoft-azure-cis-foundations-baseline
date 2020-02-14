@@ -1,4 +1,4 @@
-control "azure-cis-9.2-control-2.16" do
+control "azure-cis-foundations-2.16" do
   title "Ensure that 'Security contact emails' is set"
   desc  "Provide a security contact email address."
   desc  "rationale", "Microsoft reaches out to the designated security contact

@@ -1,4 +1,4 @@
-control "azure-cis-9.2-control-1.9" do
+control "azure-cis-foundations-1.9" do
   title "Ensure that 'Users can consent to apps accessing company data on their
 behalf' is set to 'No'"
   desc  "Require administrators to provide consent for the apps before use."

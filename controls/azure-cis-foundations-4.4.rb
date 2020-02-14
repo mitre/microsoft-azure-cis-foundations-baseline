@@ -1,4 +1,4 @@
-control "azure-cis-9.2-control-4.4" do
+control "azure-cis-foundations-4.4" do
   title "Ensure that 'Advanced Data Security' on a SQL server is set to 'On'"
   desc  "Enable \"Advanced Data Security\" on critical SQL Servers."
   desc  "rationale", "

@@ -1,4 +1,4 @@
-control "azure-cis-9.2-control-7.2" do
+control "azure-cis-foundations-7.2" do
   title "Ensure that 'Data disks' are encrypted"
   desc  "Ensure that data disks (non-boot volumes) are encrypted, where
 possible."

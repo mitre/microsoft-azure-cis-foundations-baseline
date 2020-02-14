@@ -1,4 +1,4 @@
-control "azure-cis-9.2-control-5.2.2" do
+control "azure-cis-foundations-5.2.2" do
   title "Ensure that Activity Log Alert exists for Create or Update Network
 Security Group"
   desc  "Create an Activity Log Alert for the \"Create\" or \"Update Network

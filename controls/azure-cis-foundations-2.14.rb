@@ -1,4 +1,4 @@
-control "azure-cis-9.2-control-2.14" do
+control "azure-cis-foundations-2.14" do
   title "Ensure ASC Default policy setting \"Monitor SQL Auditing\" is not
 \"Disabled\""
   desc  "Enable SQL auditing recommendations."

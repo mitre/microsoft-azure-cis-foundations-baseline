@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-control 'azure-cis-9.2-control-6.1' do
+control 'azure-cis-foundations-6.1' do
   title 'Ensure that RDP access is restricted from the internet'
   desc  'Disable RDP access on network security groups from the Internet.'
   desc  'rationale', "The potential security problem with using RDP over the

@@ -1,4 +1,4 @@
-control "azure-cis-9.2-control-1.17" do
+control "azure-cis-foundations-1.17" do
   title "Ensure that 'Users can create security groups' is set to 'No'"
   desc  "Restrict security group creation to administrators only."
   desc  "rationale", "When creating security groups is enabled, all users in

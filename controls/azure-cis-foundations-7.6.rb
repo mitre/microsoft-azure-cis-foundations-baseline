@@ -1,4 +1,4 @@
-control "azure-cis-9.2-control-7.6" do
+control "azure-cis-foundations-7.6" do
   title "Ensure that the endpoint protection for all Virtual Machines is
 installed"
   desc  "Install endpoint protection for all virtual machines."

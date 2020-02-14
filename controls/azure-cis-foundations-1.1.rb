@@ -1,4 +1,4 @@
-control "azure-cis-9.2-control-1.1" do
+control "azure-cis-foundations-1.1" do
   title "Ensure that 'Users can add gallery apps to their Access Panel' is set
 to 'No'"
   desc  "Require administrators to provide consent for the apps before use."

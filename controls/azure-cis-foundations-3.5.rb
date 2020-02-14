@@ -1,4 +1,4 @@
-control "azure-cis-9.2-control-3.5" do
+control "azure-cis-foundations-3.5" do
   title "Ensure that shared access signature tokens are allowed only over https"
   desc  "Shared access signature tokens should be allowed only over HTTPS
 protocol."

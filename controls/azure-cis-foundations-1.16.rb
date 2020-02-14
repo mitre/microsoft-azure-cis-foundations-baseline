@@ -1,4 +1,4 @@
-control "azure-cis-9.2-control-1.16" do
+control "azure-cis-foundations-1.16" do
   title "Ensure that 'Self-service group management enabled' is set to 'No'"
   desc  "Restrict group creation to administrators only."
   desc  "rationale", "Self-service group management enables users to create and

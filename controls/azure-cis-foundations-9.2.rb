@@ -1,4 +1,4 @@
-control "azure-cis-9.2-control-9.2" do
+control "azure-cis-foundations-9.2" do
   title "Ensure web app redirects all HTTP traffic to HTTPS in Azure App
 Service"
   desc  "Azure Web Apps allows sites to run under both HTTP and HTTPS by

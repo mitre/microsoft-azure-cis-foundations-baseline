@@ -1,4 +1,4 @@
-control "azure-cis-9.2-control-1.11" do
+control "azure-cis-foundations-1.11" do
   title "Ensure that 'Users can register applications' is set to 'No'"
   desc  "Require administrators to register third-party applications."
   desc  "rationale", "It is recommended to let administrator register
