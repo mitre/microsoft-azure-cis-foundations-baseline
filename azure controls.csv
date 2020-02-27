@@ -22,9 +22,9 @@ LV,1.20,,,x,1,
 LV,1.21,,,x,1,
 LV,1.22,,,x,1,
 LV,1.23,,,x,1,
-LV,2.1-2.19,Complete *later realized it’s not applicable ,Security Center,,19,Security center is an Azure Cloud offering but it has not yet been implemented for the Azure Stack.
-LV,3.1,Complete ,Storage account settings,x,1,
-LV,3.2,In Progress ,,x,1,
+LV,2.1-2.19,,Security Center,,19,Security center is an Azure Cloud offering but it has not yet been implemented for the Azure Stack.
+LV,3.1,,Storage account settings,x,1,
+LV,3.2,,,x,1,
 LV,3.3,,,x,1,
 LV,3.4,,,x,1,
 LV,3.5,,,x,1,
