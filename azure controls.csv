@@ -51,8 +51,8 @@ MT,5.2.9,,,x,1,
 MT,6.1,,NSG Groups,x,1,
 MT,6.2,,,x,1,
 MT,6.3,,,x,1,
-MT,6.4,,,,1,NSG Flow not supported, Not Applicable to stack,
-MT,6.5,,,,1,Network Watcher not supported, Not Applicable to stack,
+MT,6.4,,,,1,NSG Flow not supported, Not Applicable to stack
+MT,6.5,,,,1,Network Watcher not supported, Not Applicable to stack
 MT,7.1,,VM Configuration,x,1,
 MT,7.2,,,x,1,
 MT,7.3,,,x,1,
