@@ -31,7 +31,7 @@ LV,3.5,,,x,1,
 LV,3.6,,,x,1,
 LV,3.7,,,x,1,
 LV,3.8,,,x,1,
-MT,4.1-4.19,,Database Service (MS SQL),x,19,We are not currently using the SQL service but it may be nice to have. Prioritize this last.
+MT,4.1-4.19,,Database Service (MS SQL),x,19,We are not currently using the SQL service but it may be nice to have.
 MT,5.1.1,,AZ Monitor,x,1, Not applicable to stack,
 MT,5.1.2,,,x,1,  Not applicable to stack,
 MT,5.1.3,,,x,1,  Not applicable to stack,
