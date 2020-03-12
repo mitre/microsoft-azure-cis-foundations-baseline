@@ -31,7 +31,7 @@ LV,3.5,In Progress ,,x,1,
 LV,3.6,In Progress ,,x,1,
 LV,3.7,In Progress ,,x,1,
 LV,3.8,In Progress ,,x,1,
-MT,4.1-4.19,Skipped,Database Service (MS SQL),x,19,We are not currently using the SQL service but it may be nice to have. Prioritize this last
+MT,4.1-4.19,Skipped,Database Service (MS SQL),x,19,Microsoft has not yet implemented SQL as a service on Azure Stack.
 MT,5.1.1,,AZ Monitor,x,1,
 MT,5.1.2,,,x,1,
 MT,5.1.3,,,x,1,
