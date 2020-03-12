@@ -48,5 +48,5 @@ MT,7.6,Skipped,,x,1,Security center is not yet implemented for azure stack
 ,8.2,,,x,1,
 ,8.3,,,x,1,
 ,8.4,,,x,1,
-,8.5,,,,1,Kubernetes not implemented.
+,8.5,Skipped,,,1,Kubernetes not implemented.
 ,9.1-9.10,,App Service,,10,App service not implemented.
