@@ -1,4 +1,4 @@
-control "azure-cis-9.2-control-2.3" do
+control "azure-cis-foundations-2.3" do
   title "Ensure ASC Default policy setting \"Monitor System Updates\" is not
 \"Disabled\""
   desc  "Enable system updates recommendations for virtual machines."

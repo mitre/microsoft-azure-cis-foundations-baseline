@@ -1,4 +1,4 @@
-control "azure-cis-9.2-control-1.21" do
+control "azure-cis-foundations-1.21" do
   title "Ensure that 'Enable \"All Users\" group' is set to 'Yes'"
   desc  "Enable `All Users` group for centralized administration of all users."
   desc  "rationale", "The `All Users` group can be used to assign the same

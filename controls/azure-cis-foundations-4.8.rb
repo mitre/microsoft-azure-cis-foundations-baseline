@@ -1,4 +1,4 @@
-control "azure-cis-9.2-control-4.8" do
+control "azure-cis-foundations-4.8" do
   title "Ensure that Azure Active Directory Admin is configured"
   desc  "Use Azure Active Directory Authentication for authentication with SQL
 Database."

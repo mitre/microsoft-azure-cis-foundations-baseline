@@ -1,4 +1,4 @@
-control "azure-cis-9.2-control-3.2" do
+control "azure-cis-foundations-3.2" do
   title "Ensure that storage account access keys are periodically regenerated"
   desc  "Regenerate storage account access keys periodically."
   desc  "rationale", "When a storage account is created, Azure generates two

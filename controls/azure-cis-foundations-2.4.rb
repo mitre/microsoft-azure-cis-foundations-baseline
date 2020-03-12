@@ -1,4 +1,4 @@
-control "azure-cis-9.2-control-2.4" do
+control "azure-cis-foundations-2.4" do
   title "Ensure ASC Default policy setting \"Monitor OS Vulnerabilities\" is
 not \"Disabled\""
   desc  "Enable Monitor OS vulnerability recommendations for virtual machines."

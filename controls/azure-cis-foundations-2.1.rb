@@ -1,4 +1,4 @@
-control "azure-cis-9.2-control-2.1" do
+control "azure-cis-foundations-2.1" do
   title "Ensure that standard pricing tier is selected"
   desc  "The standard pricing tier enables threat detection for networks and
 virtual machines, providing threat intelligence, anomaly detection, and

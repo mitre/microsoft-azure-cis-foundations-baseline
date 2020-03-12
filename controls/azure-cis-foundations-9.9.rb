@@ -1,4 +1,4 @@
-control "azure-cis-9.2-control-9.9" do
+control "azure-cis-foundations-9.9" do
   title "Ensure that 'Java version' is the latest, if used to run the web app"
   desc  "Periodically, newer versions are released for Java software either due
 to security flaws or to include additional functionality. Using the latest Java

@@ -1,4 +1,4 @@
-control "azure-cis-9.2-control-1.23" do
+control "azure-cis-foundations-1.23" do
   title "Ensure that no custom subscription owner roles are created"
   desc  "Subscription ownership should not include permission to create custom
 owner roles. The principle of least privilege should be followed and only

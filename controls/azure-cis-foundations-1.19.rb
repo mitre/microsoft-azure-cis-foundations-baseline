@@ -1,4 +1,4 @@
-control "azure-cis-9.2-control-1.19" do
+control "azure-cis-foundations-1.19" do
   title "Ensure that 'Users can create Office 365 groups' is set to 'No'"
   desc  "Restrict Office 365 group creation to administrators only."
   desc  "rationale", "Restricting Office 365 group creation to administrators

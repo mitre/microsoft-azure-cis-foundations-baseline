@@ -1,4 +1,4 @@
-control "azure-cis-9.2-control-5.1.1" do
+control "azure-cis-foundations-5.1.1" do
   title "Ensure that a Log Profile exists"
   desc  "Enable log profile for exporting activity logs."
   desc  "rationale", "A log profile controls how an activity log is exported.

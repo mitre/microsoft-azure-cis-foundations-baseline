@@ -1,4 +1,4 @@
-control "azure-cis-9.2-control-2.9" do
+control "azure-cis-foundations-2.9" do
   title "Ensure ASC Default policy setting \"Enable Next Generation
 Firewall(NGFW) Monitoring\" is not \"Disabled\""
   desc  "Enable next generation firewall recommendations for virtual machines."

@@ -1,4 +1,4 @@
-control "azure-cis-9.2-control-8.2" do
+control "azure-cis-foundations-8.2" do
   title "Ensure that the expiration date is set on all Secrets"
   desc  "Ensure that all Secrets in the Azure Key Vault have an expiration time
 set."

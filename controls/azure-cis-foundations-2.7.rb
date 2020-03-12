@@ -1,4 +1,4 @@
-control "azure-cis-9.2-control-2.7" do
+control "azure-cis-foundations-2.7" do
   title "Ensure ASC Default policy setting \"Monitor Network Security Groups\"
 is not \"Disabled\""
   desc  "Enable Network security group recommendations for virtual machines."

@@ -1,4 +1,4 @@
-control "azure-cis-9.2-control-4.7" do
+control "azure-cis-foundations-4.7" do
   title "Ensure that 'Email service and co-administrators' is 'Enabled'"
   desc  "Enable service and co-administrators to receive security alerts from
 the SQL server."

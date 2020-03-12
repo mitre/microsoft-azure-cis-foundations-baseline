@@ -1,4 +1,4 @@
-control "azure-cis-9.2-control-2.6" do
+control "azure-cis-foundations-2.6" do
   title "Ensure ASC Default policy setting \"Monitor Disk Encryption\" is not
 \"Disabled\""
   desc  "Enable Disk encryption recommendations for virtual machines."

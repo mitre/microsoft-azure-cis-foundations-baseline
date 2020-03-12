@@ -1,4 +1,4 @@
-control "azure-cis-9.2-control-4.18" do
+control "azure-cis-foundations-4.18" do
   title "Ensure server parameter 'log_retention_days' is greater than 3 days
 for PostgreSQL Database Server"
   desc  "Enable `log_retention_days` on `PostgreSQL Servers`."

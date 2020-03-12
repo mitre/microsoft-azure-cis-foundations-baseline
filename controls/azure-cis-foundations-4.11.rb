@@ -1,4 +1,4 @@
-control "azure-cis-9.2-control-4.11" do
+control "azure-cis-foundations-4.11" do
   title "Ensure 'Enforce SSL connection' is set to 'ENABLED' for MySQL Database
 Server"
   desc  "Enable `SSL connection` on `MYSQL` Servers."

@@ -1,4 +1,4 @@
-control "azure-cis-9.2-control-4.2" do
+control "azure-cis-foundations-4.2" do
   title "Ensure that 'AuditActionGroups' in 'auditing' policy for a SQL server
 is set properly"
   desc  "Configure the 'AuditActionGroups' property to appropriate groups to

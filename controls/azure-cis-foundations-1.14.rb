@@ -1,4 +1,4 @@
-control "azure-cis-9.2-control-1.14" do
+control "azure-cis-foundations-1.14" do
   title "Ensure that 'Guests can invite' is set to 'No'"
   desc  "Restrict guest invitations."
   desc  "rationale", "Restricting invitations to administrators ensures that

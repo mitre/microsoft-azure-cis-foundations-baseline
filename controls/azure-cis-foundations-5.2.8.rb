@@ -1,4 +1,4 @@
-control "azure-cis-9.2-control-5.2.8" do
+control "azure-cis-foundations-5.2.8" do
   title "Ensure that Activity Log Alert exists for Create or Update or Delete
 SQL Server Firewall Rule"
   desc  "Create an activity log alert for the Create or Update or Delete SQL

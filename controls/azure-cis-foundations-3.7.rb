@@ -1,4 +1,4 @@
-control "azure-cis-9.2-control-3.7" do
+control "azure-cis-foundations-3.7" do
   title "Ensure default network access rule for Storage Accounts is set to deny"
   desc  "Restricting default network access helps to provide a new layer of
 security, since storage accounts accept connections from clients on any

@@ -1,4 +1,4 @@
-control "azure-cis-9.2-control-1.5" do
+control "azure-cis-foundations-1.5" do
   title "Ensure that 'Number of methods required to reset' is set to '2'"
   desc  "Ensure that two alternate forms of identification are provided before
 allowing a password reset."

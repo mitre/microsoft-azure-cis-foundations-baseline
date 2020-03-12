@@ -1,4 +1,4 @@
-control "azure-cis-9.2-control-3.8" do
+control "azure-cis-foundations-3.8" do
   title "Ensure 'Trusted Microsoft Services' is enabled for Storage Account
 access"
   desc  "Some Microsoft services that interact with storage accounts operate

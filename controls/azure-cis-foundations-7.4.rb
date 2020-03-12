@@ -1,4 +1,4 @@
-control "azure-cis-9.2-control-7.4" do
+control "azure-cis-foundations-7.4" do
   title "Ensure that only approved extensions are installed"
   desc  "Only install organization-approved extensions on VMs."
   desc  "rationale", "Azure virtual machine extensions are small applications

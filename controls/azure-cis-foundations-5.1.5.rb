@@ -1,4 +1,4 @@
-control "azure-cis-9.2-control-5.1.5" do
+control "azure-cis-foundations-5.1.5" do
   title "Ensure the storage container storing the activity logs is not publicly
 accessible"
   desc  "The storage account container containing the activity log export

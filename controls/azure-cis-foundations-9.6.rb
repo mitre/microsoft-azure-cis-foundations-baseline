@@ -1,4 +1,4 @@
-control "azure-cis-9.2-control-9.6" do
+control "azure-cis-foundations-9.6" do
   title "Ensure that '.Net Framework' version is the latest, if used as a part
 of the web app"
   desc  "Periodically, newer versions are released for .Net Framework software

@@ -1,4 +1,4 @@
-control "azure-cis-9.2-control-3.4" do
+control "azure-cis-foundations-3.4" do
   title "Ensure that shared access signature tokens expire within an hour"
   desc  "Expire shared access signature tokens within an hour."
   desc  "rationale", "A shared access signature (SAS) is a URI that grants

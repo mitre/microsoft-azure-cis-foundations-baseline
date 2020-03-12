@@ -1,4 +1,4 @@
-control "azure-cis-9.2-control-9.5" do
+control "azure-cis-foundations-9.5" do
   title "Ensure that Register with Azure Active Directory is enabled on App
 Service"
   desc  "Managed service identity in App Service makes the app more secure by

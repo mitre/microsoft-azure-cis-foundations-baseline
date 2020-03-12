@@ -1,4 +1,4 @@
-control "azure-cis-9.2-control-4.16" do
+control "azure-cis-foundations-4.16" do
   title "Ensure server parameter 'log_duration' is set to 'ON' for PostgreSQL
 Database Server"
   desc  "Enable `log_duration` on `PostgreSQL Servers`."

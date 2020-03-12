@@ -1,4 +1,4 @@
-control "azure-cis-9.2-control-4.6" do
+control "azure-cis-foundations-4.6" do
   title "Ensure that 'Send alerts to' is set"
   desc  "Provide the email address where alerts will be sent when anomalous
 activities are detected on SQL servers."

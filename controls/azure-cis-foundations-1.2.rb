@@ -1,4 +1,4 @@
-control "azure-cis-9.2-control-1.3" do
+control "azure-cis-9.2-control-1.2" do
   title "Ensure that there are no guest users"
   desc  "Enable multi-factor authentication for all non-privileged users."
   desc  "rationale", "Multi-factor authentication requires an individual to present a minimum of two separate forms of authentication before access is granted. Multi-factor authentication provides additional assurance that the individual attempting to gain access is who they claim to be. With multi-factor authentication, an attacker would need to compromise at least two different authentication mechanisms, increasing the difficulty of compromise and thus reducing the risk."

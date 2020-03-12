@@ -1,4 +1,4 @@
-control "azure-cis-9.2-control-5.1.7" do
+control "azure-cis-foundations-5.1.7" do
   title "Ensure that logging for Azure KeyVault is 'Enabled'"
   desc  "Enable AuditEvent logging for key vault instances to ensure
 interactions with key vaults are logged and available."

@@ -1,4 +1,4 @@
-control "azure-cis-9.2-control-6.4" do
+control "azure-cis-foundations-6.4" do
   title "Ensure that Network Security Group Flow Log retention period is
 'greater than 90 days'"
   desc  "Network Security Group Flow Logs should be enabled and the retention

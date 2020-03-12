@@ -1,6 +1,29 @@
+<<<<<<< HEAD
 control "azure-cis-9.2-control-4.1" do
   title "Ensure that 'Auditing' is set to 'On'"
   desc  "Enable auditing on SQL Servers.
+=======
+control "azure-cis-foundations-4.1" do
+  title "Ensure SQL server's TDE protector is encrypted with BYOK (Use your own
+key)"
+  desc  "TDE with BYOK support provides increased transparency and control over
+the TDE Protector, increased security with an HSM-backed external service, and
+promotion of separation of duties.
+
+    With TDE, data is encrypted at rest with a symmetric key (called the
+database encryption key) stored in the database or data warehouse distribution.
+To protect this data encryption key (DEK) in the past, only a certificate that
+the Azure SQL Service managed could be used. Now, with BYOK support for TDE,
+the DEK can be protected with an asymmetric key that is stored in the Key
+Vault. Key Vault is a highly available and scalable cloud-based key store which
+offers central key management, leverages FIPS 140-2 Level 2 validated hardware
+security modules (HSMs), and allows separation of management of keys and data,
+for additional security.
+
+    Based on business needs or criticality of data/databases hosted a SQL
+server, it is recommended that the TDE protector is encrypted by a key that is
+managed by the data owner (BYOK).
+>>>>>>> 9d9783812069bf3301cdb5a6580ba9564cdb02fa
   "
   desc  "rationale", "The Azure platform allows a SQL server to be created as a service. Enabling auditing at the server level ensures that all existing and newly created databases on the SQL server instance are audited. Auditing policy applied on the SQL database does not override auditing policy and settings applied on the particular SQL server where the database is hosted.
   Auditing tracks database events and writes them to an audit log in the Azure storage account. It also helps to maintain regulatory compliance, understand database activity, and gain insight into discrepancies and anomalies that could indicate business concerns or suspected security violations."

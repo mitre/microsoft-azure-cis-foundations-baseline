@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-control 'azure-cis-9.2-control-3.1' do
+control 'azure-cis-foundations-3.1' do
   title "Ensure that 'Secure transfer required' is set to 'Enabled'"
   desc  'Enable data encryption is transit.'
   desc  'rationale', "The secure transfer option enhances the security of a

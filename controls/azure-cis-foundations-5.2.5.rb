@@ -1,4 +1,4 @@
-control "azure-cis-9.2-control-5.2.5" do
+control "azure-cis-foundations-5.2.5" do
   title "Ensure that activity log alert exists for the Delete Network Security
 Group Rule"
   desc  "Create an activity log alert for the Delete Network Security Group

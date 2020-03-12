@@ -1,4 +1,4 @@
-control "azure-cis-9.2-control-2.12" do
+control "azure-cis-foundations-2.12" do
   title "Ensure ASC Default policy setting \"Monitor JIT Network Access\" is
 not \"Disabled\""
   desc  "Enable JIT Network Access for virtual machines."

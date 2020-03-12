@@ -1,4 +1,4 @@
-control "azure-cis-9.2-control-8.5" do
+control "azure-cis-foundations-8.5" do
   title "Enable role-based access control (RBAC) within Azure Kubernetes
 Services"
   desc  "Ensure that RBAC is enabled on all Azure Kubernetes Services Instances"

@@ -1,4 +1,4 @@
-control "azure-cis-9.2-control-4.3" do
+control "azure-cis-foundations-4.3" do
   title "Ensure that 'Auditing' Retention is 'greater than 90 days'"
   desc  "SQL Server Audit Retention should be configured to be greater than 90
 days."

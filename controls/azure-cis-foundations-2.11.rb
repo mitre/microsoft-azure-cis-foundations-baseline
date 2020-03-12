@@ -1,4 +1,4 @@
-control "azure-cis-9.2-control-2.11" do
+control "azure-cis-foundations-2.11" do
   title "Ensure ASC Default policy setting \"Monitor Storage Blob Encryption\"
 is not \"Disabled\""
   desc  "Enable storage encryption recommendations."

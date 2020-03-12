@@ -1,4 +1,4 @@
-control "azure-cis-9.2-control-2.19" do
+control "azure-cis-foundations-2.19" do
   title "Ensure that 'Send email also to subscription owners' is set to 'On'"
   desc  "Enable security alert emails to subscription owners."
   desc  "rationale", "Enabling security alert emails to subscription owners

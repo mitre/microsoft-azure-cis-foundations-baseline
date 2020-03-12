@@ -1,4 +1,4 @@
-control "azure-cis-9.2-control-4.14" do
+control "azure-cis-foundations-4.14" do
   title "Ensure server parameter 'log_connections' is set to 'ON' for
 PostgreSQL Database Server"
   desc  "Enable `log_connections` on `PostgreSQL Servers`."

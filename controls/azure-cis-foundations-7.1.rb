@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-control 'azure-cis-9.2-control-7.1' do
+control 'azure-cis-foundations-7.1' do
   title "Ensure that 'OS disk' are encrypted"
   desc  'Ensure that OS disks (boot volumes) are encrypted, where possible.'
   desc  'rationale', "Encrypting the IaaS VM's OS disk (boot volume) ensures

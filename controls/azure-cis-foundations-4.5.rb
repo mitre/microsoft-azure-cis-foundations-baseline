@@ -1,4 +1,4 @@
-control "azure-cis-9.2-control-4.5" do
+control "azure-cis-foundations-4.5" do
   title "Ensure that 'Threat Detection types' is set to 'All'"
   desc  "Enable all types of threat detection on SQL servers."
   desc  "rationale", "Enabling all threat detection types protects against SQL

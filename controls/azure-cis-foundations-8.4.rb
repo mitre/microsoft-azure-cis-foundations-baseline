@@ -1,4 +1,4 @@
-control "azure-cis-9.2-control-8.4" do
+control "azure-cis-foundations-8.4" do
   title "Ensure the key vault is recoverable"
   desc  "The key vault contains object keys, secrets and certificates.
 Accidental unavailability of a key vault can cause immediate data loss or loss
