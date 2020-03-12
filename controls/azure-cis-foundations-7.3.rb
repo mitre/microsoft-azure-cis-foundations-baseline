@@ -82,5 +82,16 @@ documentation at:
   tag mitigation_controls: nil
   tag responsibility: nil
   tag ia_controls: nil
+
+  azurerm_resource_groups.names.each do |rg_name|
+    azurerm_virtual_machine_disks.names.each do |disk_name|
+       azurerm_virtual_machine_disks(resource_group: rg_name, name: disk_name) do
+        describe azurerm_virtual_machine_disks.where { attached == false } do
+          its('encryption_enabled') { should be true }
+        end
+      end
+    end
+  end
+
 end
 

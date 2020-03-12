@@ -59,5 +59,14 @@ https:///secrets//
   tag mitigation_controls: nil
   tag responsibility: nil
   tag ia_controls: nil
-end
+
+  azurerm_resource_groups.names.each do |rg_name|
+    azurerm_virtual_machine_disks.names.each do |disk_name|
+      azurerm_virtual_machine_disk(resource_group: rg_name, name: disk_name) do
+        azurerm_virtual_machine_disks.where { !properties.respond_to?(:osType) }
+          its('encryption_enabled') { should be true }
+        end
+      end
+    end
+  end
 
