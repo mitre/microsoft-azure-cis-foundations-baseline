@@ -1,19 +1,7 @@
-control "azure-cis-9.2-control-2.8" do
-  title "Ensure ASC Default policy setting \"Monitor Web Application Firewall\"
-is not \"Disabled\""
-  desc  "Enable Web application firewall recommendations for virtual machines."
-  desc  "rationale", "
-    When this setting is enabled, it recommends that a web application firewall
-is provisioned on virtual machines when either of the following is true:
-
-    - Instance-level public IP (ILPIP) is used and the inbound security rules
-for the associated network security group are configured to allow access to
-port 80/443.
-
-    - Load-balanced IP is used and the associated load balancing and inbound
-network address translation (NAT) rules are configured to allow access to port
-80/443.
-  "
+control "azure-cis-9.2-control-2.10" do
+  title Ensure ASC Default policy setting \"Monitor Vulnerability Assessment\" is not \"Disabled\""
+  desc  "Enable vulnerability assessment recommendations for virtual machines."
+  desc  "rationale", "When this setting is enabled, it recommends a vulnerability assessment solution be installed on the VM."
   desc  "check", "
     **Azure Console**
 
@@ -22,21 +10,16 @@ network address translation (NAT) rules are configured to allow access to port
     3. Click `Subscription View`
     4. Click on `Subscription Name` to open Security Policy Blade for the
 Subscription.
-    5. Expand `Network`
-    6. Ensure that `Web Application Firewall` is not set to `Disabled`
+    5. Expand `Compute` and `Apps`
+    6. Ensure that `Vulnerability Assessment` is not set to `Disabled`
 
     **Azure Command Line Interface 2.0**
 
     Ensure the output of the below command is not `Disabled` or Empty
 
     ```
-    az account get-access-token --query
-\"{subscription:subscription,accessToken:accessToken}\" --out tsv | xargs -L1
-bash -c 'curl -X GET -H \"Authorization: Bearer $1\" -H \"Content-Type:
-application/json\"
-https://management.azure.com/subscriptions/$0/providers/Microsoft.Authorization/policyAssignments/SecurityCenterBuiltIn?api-version=2018-05-01'
-| jq 'select(.name==\"SecurityCenterBuiltIn\")'|jq
-'.properties.parameters.webApplicationFirewallMonitoringEffect.value'
+    az account get-access-token --query \"{subscription:subscription,accessToken:accessToken}\" --out tsv | xargs -L1 bash -c 'curl -X GET -H \"Authorization: Bearer $1\" -H \"Content-Type: application/json\" https://management.azure.com/subscriptions/$0/providers/Microsoft.Authorizati on/policyAssignments/SecurityCenterBuiltIn?api-version=2018-05-01' | jq 'select(.name==\"SecurityCenterBuiltIn\")'|jq
+'.properties.parameters.vulnerabilityAssesmentMonitoringEffect.value'
     ```
   "
   desc  "fix", "
@@ -46,7 +29,7 @@ https://management.azure.com/subscriptions/$0/providers/Microsoft.Authorization/
     2. On Policy \"Overview\" blade, Click on Policy `ASC Default
 (Subscription:Subscription_ID)`
     3. On \"ASC Default\" blade, Click on `Edit Assignments`
-    4. In section `PARAMETERS`, Set `Monitor Web Application Firewall` to
+    4. In section `PARAMETERS`, Set `Monitor Vulnerability Assessment` to
 `AuditIfNotExists` or any other available value than `Disabled`
     5. Click `Save`
   "
@@ -58,10 +41,10 @@ https://management.azure.com/subscriptions/$0/providers/Microsoft.Authorization/
   tag stig_id: nil
   tag fix_id: nil
   tag cci: nil
-  tag nist: ["SC-7 (8)", "Rev_4"]
+  tag nist: ["SC-1", "Rev_4"]
   tag cis_level: 1
-  tag cis_controls: ["12", "Rev_7"]
-  tag cis_rid: "2.8"
+  tag cis_controls: ["3.1", "Rev_7"]
+  tag cis_rid: "2.10"
   tag false_negatives: nil
   tag false_positives: nil
   tag documentable: nil
