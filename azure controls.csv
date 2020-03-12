@@ -35,15 +35,15 @@ MT,4.1-4.19,Skipped,Database Service (MS SQL),x,19,Microsoft has not yet impleme
 MT,5.1.1-5.2.9,Skipped,AZ Monitor,x,16,Microsoft has not yet implemented exporting Azure Monitor logs from Azure Stack or Azure Monitor Alerts for Azure Stack.
 MT,6.1,,NSG Groups,x,1,
 MT,6.2,,,x,1,
-MT,6.3,,,x,1,
-MT,6.4,,,,1,NSG Flow not supported
-MT,6.5,,,,1,Network Watcher not supported
+MT,6.3,Skipped,,x,1,SQL databases as a service are not supported
+MT,6.4,Skipped,,,1,NSG Flow not supported
+MT,6.5,Skipped,,,1,Network Watcher not supported
 MT,7.1,,VM Configuration,x,1,
 MT,7.2,,,x,1,
 MT,7.3,,,x,1,
 MT,7.4,,,x,1,
-MT,7.5,,,x,1,
-MT,7.6,,,x,1,
+MT,7.5,Skipped,,x,1,Security center is not yet implemented for azure stack
+MT,7.6,Skipped,,x,1,Security center is not yet implemented for azure stack
 ,8.1,,Keyvault,x,1,
 ,8.2,,,x,1,
 ,8.3,,,x,1,
