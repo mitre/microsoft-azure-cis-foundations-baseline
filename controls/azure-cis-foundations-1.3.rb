@@ -46,5 +46,9 @@ potentially be overlooked indefinitely leading to a potential vulnerability."
   tag mitigation_controls: nil
   tag responsibility: nil
   tag ia_controls: nil
+
+  describe "Azure Active Directory does not allow you to grant Directory Reader role to SPNs." do
+    skip "Azure Active Directory does not allow you to grant Directory Reader role to an SPN. Therefore, this control must be manually verified."
+  end
 end
 

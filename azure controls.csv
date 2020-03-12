@@ -1,67 +1,52 @@
-﻿Assignedee,Control,In Progress/Complete,Summary,Applies to Stack,Count,Details
-LV,1.1,,Identity and Access Management,x,1,
-LV,1.2,,,x,1,
-LV,1.3,,,x,1,
-LV,1.4,,,x,1,
-LV,1.5,,,x,1,
-LV,1.6,,,x,1,
-LV,1.7,,,x,1,
-LV,1.8,,,x,1,
-LV,1.9,,,x,1,
-LV,1.10,,,x,1,
-LV,1.11,,,x,1,
-LV,1.12,,,x,1,
-LV,1.13,,,x,1,
-LV,1.14,,,x,1,
-LV,1.15,,,x,1,
-LV,1.16,,,x,1,
-LV,1.17,,,x,1,
-LV,1.18,,,x,1,
-LV,1.19,,,x,1,
-LV,1.20,,,x,1,
-LV,1.21,,,x,1,
-LV,1.22,,,x,1,
+﻿Assignedee,Control,Status,Summary,Applies to Stack,Count,Details
+LV,1.1,Complete,Identity and Access Management,x,1,
+LV,1.2,Complete,,x,1,
+LV,1.3,Complete,,x,1,
+LV,1.4,Complete,,x,1,
+LV,1.5,Complete,,x,1,
+LV,1.6,Complete,,x,1,
+LV,1.7,Complete,,x,1,
+LV,1.8,Complete,,x,1,
+LV,1.9,Complete,,x,1,
+LV,1.1,Complete,,x,1,
+LV,1.11,Complete,,x,1,
+LV,1.12,Complete,,x,1,
+LV,1.13,Complete,,x,1,
+LV,1.14,Complete,,x,1,
+LV,1.15,Complete,,x,1,
+LV,1.16,Complete,,x,1,
+LV,1.17,Complete,,x,1,
+LV,1.18,Complete,,x,1,
+LV,1.19,Complete,,x,1,
+LV,1.2,Complete,,x,1,
+LV,1.21,Complete,,x,1,
+LV,1.22,Complete,,x,1,
 LV,1.23,,,x,1,
-LV,2.1-2.19,,Security Center,,19,Security center is an Azure Cloud offering but it has not yet been implemented for the Azure Stack.
-LV,3.1,,Storage account settings,x,1,
-LV,3.2,,,x,1,
-LV,3.3,,,x,1,
+LV,2.1-2.19,Skipped,Security Center,,19,Security center is an Azure Cloud offering but it has not yet been implemented for the Azure Stack.
+LV,3.1,In Progress ,Storage account settings,x,1,
+LV,3.2,In Progress ,,x,1,
+LV,3.3,In Progress ,,x,1,
 LV,3.4,,,x,1,
-LV,3.5,,,x,1,
-LV,3.6,,,x,1,
-LV,3.7,,,x,1,
-LV,3.8,,,x,1,
-MT,4.1-4.19,,Database Service (MS SQL),x,19,We are not currently using the SQL service but it may be nice to have. Prioritize this last.
-MT,5.1.1,,AZ Monitor,x,1, Not applicable to stack
-MT,5.1.2,,,x,1,  Not applicable to stack
-MT,5.1.3,,,x,1,  Not applicable to stack
-MT,5.1.4,,,x,1,  Not applicable to stack
-MT,5.1.5,,,x,1,  Not applicable to stack
-MT,5.1.6,,,x,1,  
-MT,5.1.7,,,x,1,
-MT,5.2.1,,,x,1,
-MT,5.2.2,,,x,1,
-MT,5.2.3,,,x,1,
-MT,5.2.4,,,x,1,
-MT,5.2.5,,,x,1,
-MT,5.2.6,,,x,1,
-MT,5.2.7,,,x,1,
-MT,5.2.8,,,x,1,
-MT,5.2.9,,,x,1,
+LV,3.5,In Progress ,,x,1,
+LV,3.6,In Progress ,,x,1,
+LV,3.7,In Progress ,,x,1,
+LV,3.8,In Progress ,,x,1,
+MT,4.1-4.19,Skipped,Database Service (MS SQL),x,19,Microsoft has not yet implemented SQL as a service on Azure Stack.
+MT,5.1.1-5.2.9,Skipped,AZ Monitor,x,16,Microsoft has not yet implemented exporting Azure Monitor logs from Azure Stack or Azure Monitor Alerts for Azure Stack.
 MT,6.1,,NSG Groups,x,1,
 MT,6.2,,,x,1,
-MT,6.3,,,x,1,
-MT,6.4,,,,1,NSG Flow not supported. Not Applicable to stack
-MT,6.5,,,,1,Network Watcher not supported. Not Applicable to stack
-MT,7.1,,VM Configuration,x,1,
-MT,7.2,,,x,1,
-MT,7.3,,,x,1,
+MT,6.3,Skipped,,x,1,SQL databases as a service are not supported
+MT,6.4,Skipped,,,1,NSG Flow not supported
+MT,6.5,Skipped,,,1,Network Watcher not supported
+MT,7.1,Skipped,VM Configuration,x,1,Disk encryption with your own keys is not supported.
+MT,7.2,Skipped,,x,1,Disk encryption with your own keys is not supported.
+MT,7.3,Skipped,,x,1,Disk encryption with your own keys is not supported.
 MT,7.4,,,x,1,
-MT,7.5,,,x,1,
-MT,7.6,,,x,1,
+MT,7.5,Skipped,,x,1,Security center is not yet implemented for azure stack
+MT,7.6,Skipped,,x,1,Security center is not yet implemented for azure stack
 ,8.1,,Keyvault,x,1,
 ,8.2,,,x,1,
 ,8.3,,,x,1,
 ,8.4,,,x,1,
-,8.5,,,,1,Kubernetes not implemented.
-,9.1-9.10,,App Service,,10,App service not implemented.
+,8.5,Skipped,,,1,Kubernetes not implemented.
+,9.1-9.10,Skipped,App Service,,10,App service not implemented.

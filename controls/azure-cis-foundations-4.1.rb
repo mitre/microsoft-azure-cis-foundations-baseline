@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+control "azure-cis-9.2-control-4.1" do
+  title "Ensure that 'Auditing' is set to 'On'"
+  desc  "Enable auditing on SQL Servers.
+=======
 control "azure-cis-foundations-4.1" do
   title "Ensure SQL server's TDE protector is encrypted with BYOK (Use your own
 key)"
@@ -18,74 +23,61 @@ for additional security.
     Based on business needs or criticality of data/databases hosted a SQL
 server, it is recommended that the TDE protector is encrypted by a key that is
 managed by the data owner (BYOK).
+>>>>>>> 9d9783812069bf3301cdb5a6580ba9564cdb02fa
   "
-  desc  "rationale", "Bring Your Own Key (BYOK) support for Transparent Data
-Encryption (TDE) allows user control of TDE encryption keys and restricts who
-can access them and when. Azure Key Vault, Azure’s cloud-based external key
-management system is the first key management service where TDE has integrated
-support for BYOK. With BYOK, the database encryption key is protected by an
-asymmetric key stored in the Key Vault. The asymmetric key is set at the server
-level and inherited by all databases under that server. This feature is
-currently in preview and we do not recommend using it for production workloads
-until we declare General Availability."
+  desc  "rationale", "The Azure platform allows a SQL server to be created as a service. Enabling auditing at the server level ensures that all existing and newly created databases on the SQL server instance are audited. Auditing policy applied on the SQL database does not override auditing policy and settings applied on the particular SQL server where the database is hosted.
+  Auditing tracks database events and writes them to an audit log in the Azure storage account. It also helps to maintain regulatory compliance, understand database activity, and gain insight into discrepancies and anomalies that could indicate business concerns or suspected security violations."
   desc  "check", "
-    **Azure Portal:**
+    **Azure Console**
 
     1. Go to `SQL servers`
-    2. For the desired server instance
-    3. Click On `Transparent data encryption`
-    4. Ensure that `Use your own key` is set to `YES`
-    5. Ensure `Make selected key the default TDE protector` is checked
+    2. For each server instance
+    3. Click on `Auditing`
+    4. Ensure that `Auditing` is set to `On`
 
-    **Azure CLI:**
+    **Azure PowerShell**
 
-    ```
-    az account get-access-token --query
-\"{subscripton:subscription,accessToken:accessToken}\" --out tsv | xargs -L1
-bash -c 'curl -X GET -H \"Authorization: Bearer $1\" -H \"Content-Type:
-application/json\" GET
-https://management.azure.com/subscriptions/$0/resourceGroups/{resourceGroupName}/providers/Microsoft.Sql/servers/{serverName}/encryptionProtector?api-version=2015-05-01-preview'
-    ```
+    Get the list of all SQL Servers
 
-    Ensure the output of the command contains properties
+    ```Get-AzureRmSqlServer```
 
-    `kind` set to `azurekeyvault`
+    For each Server
 
-    `serverKeyType` set to `AzureKeyVault`
+    ```Get-AzureRmSqlServerAuditing -ResourceGroupName  -ServerName  ```
 
-    `uri` is not null
+    Ensure that `AuditState` is set to `Enabled`
   "
   desc  "fix", "
-    **Azure Console:**
+    **Azure Console**
 
-    Go to `SQL servers`
+    1. Go to `SQL servers`
+    2. For each server instance
+    3. Click on `Auditing`
+    4. Set `Auditing` to `On`
 
-    For the desired server instance
+    **Azure PowerShell**
 
-    1. Click On `Transparent data encryption`
-    2. Set `Use your own key` to `YES`
-    3. Browse through your `key vaults` to Select an existing key or create a
-new key in Key Vault.
-    4. Check `Make selected key the default TDE protector`
+    Get the list of all SQL Servers
 
-    **Azure CLI:**
+    ```Get-AzureRmSqlServer```
 
-    Use the below command to encrypt SQL server's TDE protector with BYOK
+    For each Server, enable auditing.
+
     ```
-    az sql server tde-key >> Set --resource-group  --server  --server-key-type
-{AzureKeyVault} [--kid ]```
+    Set-AzureRmSqlServerAuditingPolicy -ResourceGroupName <resource group name> - ServerName <server name> -AuditType <audit type> -StorageAccountName <storage account name>
+    ```
   "
-  impact 0.7
-  tag severity: "high"
+  impact 0.5
+  tag severity: "medium"
   tag gtitle: nil
   tag gid: nil
   tag rid: nil
   tag stig_id: nil
   tag fix_id: nil
   tag cci: nil
-  tag nist: ["SC-28", "Rev_4"]
-  tag cis_level: 2
-  tag cis_controls: ["16.4", "Rev_7"]
+  tag nist: ["AU-3", "Rev_4"]
+  tag cis_level: 1
+  tag cis_controls: ["6.3", "Rev_7"]
   tag cis_rid: "4.1"
   tag false_negatives: nil
   tag false_positives: nil
@@ -97,5 +89,9 @@ new key in Key Vault.
   tag mitigation_controls: nil
   tag responsibility: nil
   tag ia_controls: nil
+
+  describe "This control is not yet implemented. Azure Stack has not yet implemented sql databases as a service." do
+    skip "This control is not yet implemented. Azure Stack has not yet implemented sql databases as a service."
+  end
 end
 
