@@ -58,7 +58,7 @@ control "azure-cis-9.2-control-1.3" do
   tag nist: ["AC-2", "Rev_4"]
   tag cis_level: 1
   tag cis_controls: ["16.3", "Rev_7"]
-  tag cis_rid: "1.3"
+  tag cis_rid: "1.2"
   tag false_negatives: nil
   tag false_positives: nil
   tag documentable: nil
