@@ -44,7 +44,7 @@ MT,7.3,Skipped,,x,1,Disk encryption with your own keys is not supported.
 MT,7.4,Complete,,x,1,
 MT,7.5,Complete,,x,1,There is no API/CLI mechanism available to programmatically conduct security assessment for this recommendation.
 MT,7.6,Complete,,x,1,Security center is not yet implemented for azure stack
-,8.1,,Keyvault,x,1,
+,8.1,Complete,Keyvault,x,1,
 ,8.2,,,x,1,
 ,8.3,,,x,1,
 ,8.4,,,x,1,
