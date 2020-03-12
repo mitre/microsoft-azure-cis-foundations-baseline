@@ -87,5 +87,9 @@ to `Private (no anonymous access)`
   tag mitigation_controls: nil
   tag responsibility: nil
   tag ia_controls: nil
+
+  describe "This control is not yet implemented. Azure Stack has not yet implemented exporting activity logs from azure stack." do
+    skip "This control is not yet implemented. Azure Stack has not yet implemented exporting activity logs from azure stack."
+  end
 end
 
