@@ -29,8 +29,8 @@ LV,3.3,In Progress ,,x,1,
 LV,3.4,Complete,,x,1,
 LV,3.5,Complete,,x,1,
 LV,3.6,In Progress ,,x,1,
-LV,3.7,Skipped,,x,1,Blob storage firewall rules have not been implemented for Azure Stack yet.
-LV,3.8,In Progress ,,x,1,Blob storage firewall rules have not been implemented for Azure Stack yet.
+LV,3.7,Skipped,,x,1,storage account firewall rules have not been implemented for Azure Stack yet.
+LV,3.8,In Progress ,,x,1,storage account firewall rules have not been implemented for Azure Stack yet.
 MT,4.1-4.19,Skipped,Database Service (MS SQL),x,19,Microsoft has not yet implemented SQL as a service on Azure Stack.
 MT,5.1.1-5.2.9,Skipped,AZ Monitor,x,16,Microsoft has not yet implemented exporting Azure Monitor logs from Azure Stack or Azure Monitor Alerts for Azure Stack.
 MT,6.1,,NSG Groups,x,1,
