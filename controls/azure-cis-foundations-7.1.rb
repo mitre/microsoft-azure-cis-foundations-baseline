@@ -60,13 +60,11 @@ https:///secrets//
   tag responsibility: nil
   tag ia_controls: nil
   
-  azurerm_resource_groups.names.each do |rg_name|
-    azurerm_virtual_machine_disks.names.each do |disk_name|
-      azurerm_virtual_machine_disk(resource_group: rg_name, name: disk_name) do
-        azurerm_virtual_machine_disks.where { properties.respond_to?(:osType) }
-          its('encryption_enabled') { should be true }
-        end
-      end
-    end
+  # describe azurerm_virtual_machine_disks.where { properties.respond_to?(:osType) } do
+  #   its('encryption_enabled') { should be true }
+  # end
+
+  describe "This control is not yet implemented. Azure Stack has not yet implemented encrypting disk with your own keys." do
+    skip "This control is not yet implemented. Azure Stack has not yet implemented encrypting disk with your own keys."
   end
 end

@@ -1,5 +1,5 @@
 control "azure-cis-9.2-control-2.10" do
-  title Ensure ASC Default policy setting \"Monitor Vulnerability Assessment\" is not \"Disabled\""
+  title "Ensure ASC Default policy setting \"Monitor Vulnerability Assessment\" is not \"Disabled\""
   desc  "Enable vulnerability assessment recommendations for virtual machines."
   desc  "rationale", "When this setting is enabled, it recommends a vulnerability assessment solution be installed on the VM."
   desc  "check", "

@@ -38,9 +38,9 @@ MT,6.2,,,x,1,
 MT,6.3,Skipped,,x,1,SQL databases as a service are not supported
 MT,6.4,Skipped,,,1,NSG Flow not supported
 MT,6.5,Skipped,,,1,Network Watcher not supported
-MT,7.1,,VM Configuration,x,1,
-MT,7.2,,,x,1,
-MT,7.3,,,x,1,
+MT,7.1,Skipped,VM Configuration,x,1,Disk encryption with your own keys is not supported.
+MT,7.2,Skipped,,x,1,Disk encryption with your own keys is not supported.
+MT,7.3,Skipped,,x,1,Disk encryption with your own keys is not supported.
 MT,7.4,,,x,1,
 MT,7.5,Skipped,,x,1,Security center is not yet implemented for azure stack
 MT,7.6,Skipped,,x,1,Security center is not yet implemented for azure stack
