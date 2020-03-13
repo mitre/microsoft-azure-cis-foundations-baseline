@@ -70,7 +70,7 @@ Y-m-d'T'H:M:S'Z'
 
   azurerm_resource_groups.names.each do |rg_name|
     azurerm_key_vaults(resource_group: rg_name).names.each do |vault_name|
-      azurerm_key_vault_keys("vault-target").names.each do |key_name|
+      azurerm_key_vault_keys(vault_name).names.each do |key_name|
         describe azurerm_key_vault_key(vault_name, key_name) do
           it { should be_enabled }
           it { should have_expiration_set }
