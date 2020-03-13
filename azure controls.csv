@@ -45,8 +45,8 @@ MT,7.4,Complete,,x,1,
 MT,7.5,Complete,,x,1,There is no API/CLI mechanism available to programmatically conduct security assessment for this recommendation.
 MT,7.6,Complete,,x,1,Security center is not yet implemented for azure stack
 ,8.1,Complete,Keyvault,x,1,
-,8.2,,,x,1,
+,8.2,Complete,,x,1,
 ,8.3,,,x,1,
-,8.4,,,x,1,
+,8.4,Complete,,x,1,
 ,8.5,Skipped,,,1,Kubernetes not implemented.
 ,9.1-9.10,Skipped,App Service,,10,App service not implemented.
