@@ -53,5 +53,16 @@ action of `*`
   tag mitigation_controls: nil
   tag responsibility: nil
   tag ia_controls: nil
+
+  azurerm_role_definitions.names.each do |id|
+    role_resource = azurerm_role_definition(name: id)
+    describe role_resource do
+      it { should_not have_assignable_scope "/" }
+    end if role_resource.permissions_allowed.include?("*")
+
+    describe role_resource do
+      it { should_not have_assignable_scope /\/subscriptions\/[0-9\-a-zA-z]*$/ }
+    end if role_resource.permissions_allowed.include?("*")
+  end
 end
 

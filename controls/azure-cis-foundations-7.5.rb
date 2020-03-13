@@ -55,8 +55,8 @@ required security patches for your OS."
   tag responsibility: nil
   tag ia_controls: nil
 
-  describe "This control has not been implemented yet. Security Center is an Azure Cloud offering and has not yet been implemented for Azure Stack." do
-    skip "This control has not been implemented yet. Security Center is an Azure Cloud offering and has not yet been implemented for Azure Stack."
+  describe "At this point of time, there is no API/CLI mechanism available to programmatically conduct security assessment for this recommendation." do
+    skip "At this point of time, there is no API/CLI mechanism available to programmatically conduct security assessment for this recommendation."
   end
 end
 

@@ -21,7 +21,7 @@ LV,1.19,Complete,,x,1,There is no API/CLI mechanism available to programmaticall
 LV,1.2,Complete,,x,1,There is no API/CLI mechanism available to programmatically conduct security assessment for this recommendation.
 LV,1.21,Complete,,x,1,There is no API/CLI mechanism available to programmatically conduct security assessment for this recommendation.
 LV,1.22,Complete,,x,1,There is no API/CLI mechanism available to programmatically conduct security assessment for this recommendation.
-LV,1.23,,,x,1,
+LV,1.23,Complete,,x,1,
 LV,2.1-2.19,Skipped,Security Center,,19,Security center is an Azure Cloud offering but it has not yet been implemented for the Azure Stack.
 LV,3.1,In Progress ,Storage account settings,x,1,
 LV,3.2,In Progress ,,x,1,
@@ -33,20 +33,20 @@ LV,3.7,Skipped,,x,1,storage account firewall rules have not been implemented for
 LV,3.8,Skipped ,,x,1,storage account firewall rules have not been implemented for Azure Stack yet.
 MT,4.1-4.19,Skipped,Database Service (MS SQL),x,19,Microsoft has not yet implemented SQL as a service on Azure Stack.
 MT,5.1.1-5.2.9,Skipped,AZ Monitor,x,16,Microsoft has not yet implemented exporting Azure Monitor logs from Azure Stack or Azure Monitor Alerts for Azure Stack.
-MT,6.1,,NSG Groups,x,1,
-MT,6.2,,,x,1,
+MT,6.1,Complete,NSG Groups,x,1,
+MT,6.2,Complete,,x,1,
 MT,6.3,Skipped,,x,1,SQL databases as a service are not supported
 MT,6.4,Skipped,,,1,NSG Flow not supported
 MT,6.5,Skipped,,,1,Network Watcher not supported
 MT,7.1,Skipped,VM Configuration,x,1,Disk encryption with your own keys is not supported.
 MT,7.2,Skipped,,x,1,Disk encryption with your own keys is not supported.
 MT,7.3,Skipped,,x,1,Disk encryption with your own keys is not supported.
-MT,7.4,,,x,1,
-MT,7.5,Skipped,,x,1,Security center is not yet implemented for azure stack
-MT,7.6,Skipped,,x,1,Security center is not yet implemented for azure stack
-,8.1,,Keyvault,x,1,
-,8.2,,,x,1,
+MT,7.4,Complete,,x,1,
+MT,7.5,Complete,,x,1,There is no API/CLI mechanism available to programmatically conduct security assessment for this recommendation.
+MT,7.6,Complete,,x,1,Security center is not yet implemented for azure stack
+,8.1,Complete,Keyvault,x,1,
+,8.2,Complete,,x,1,
 ,8.3,,,x,1,
-,8.4,,,x,1,
+,8.4,Complete,,x,1,
 ,8.5,Skipped,,,1,Kubernetes not implemented.
 ,9.1-9.10,Skipped,App Service,,10,App service not implemented.

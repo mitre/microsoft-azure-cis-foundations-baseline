@@ -1,3 +1,5 @@
+approved_endpoint_protection_extensions = input("approved_endpoint_protection_extensions", value: [])
+
 control "azure-cis-foundations-7.6" do
   title "Ensure that the endpoint protection for all Virtual Machines is
 installed"
@@ -56,8 +58,14 @@ endpoint protection tool for your OS."
   tag responsibility: nil
   tag ia_controls: nil
 
-  describe "This control has not been implemented yet. Security Center is an Azure Cloud offering and has not yet been implemented for Azure Stack." do
-    skip "This control has not been implemented yet. Security Center is an Azure Cloud offering and has not yet been implemented for Azure Stack."
+  default_endpoint_protection_extensions = ["EndpointSecurity","TrendMicroDSA*","Antimalware","EndpointProtection","SCWPAgent","PortalProtectExtension*","FileSecurity*"]
+
+  azurerm_resource_groups.names.each do |rg_name|
+    azurerm_virtual_machines(resource_group: rg_name).vm_names.each do |vm_name|
+      describe azurerm_virtual_machine(resource_group: rg_name, name: vm_name) do
+        it { should have_endpoint_protection_installed approved_endpoint_protection_extensions + default_endpoint_protection_extensions }
+      end
+    end
   end
 end
 
