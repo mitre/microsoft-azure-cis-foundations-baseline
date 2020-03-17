@@ -84,7 +84,7 @@ rwd --retention 90
   azurerm_resource_groups.names.each do |rg_name|
     azurerm_storage_accounts(resource_group: rg_name).names.each do |sa_name|
       describe azurerm_storage_account(resource_group: rg_name, name: sa_name) do
-        its('queue_properties') {should be true}
+        its('properties.encryption.services.queue.enabled') {should be true}
       end
     end
   end
