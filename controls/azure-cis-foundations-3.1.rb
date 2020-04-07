@@ -67,8 +67,9 @@ Account`
   tag mitigation_controls: nil
   tag responsibility: nil
   tag ia_controls: nil
-
-  azurerm_resource_groups.names.each do |rg_name|
+  if input('my_resource_groups').empty? ?
+    "azurerm_resource_groups.names.each do |rg_name|" :
+    "input('my_resource_groups).each.do |rg_name|"
     azurerm_storage_accounts(resource_group: rg_name).names.each do |sa_name|
       describe azurerm_storage_account(resource_group: rg_name, name: sa_name) do
         its('properties.supportsHttpsTrafficOnly') { should be true }
@@ -76,7 +77,9 @@ Account`
     end
   end
 
-  azurerm_resource_groups.names.each do |rg_name|
+  if input('my_resource_groups').empty? ?
+    "azurerm_resource_groups.names.each do |rg_name|" :
+    "input('my_resource_groups).each.do |rg_name|"
     azurerm_storage_accounts(resource_group: rg_name).names.each do |sa_name|
       describe azurerm_storage_account(resource_group: rg_name, name: sa_name) do
         its('properties.encryption.services.blob.enabled') { should eq true }

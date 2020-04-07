@@ -101,7 +101,9 @@ properties.enableSoftDelete=true
   tag responsibility: nil
   tag ia_controls: nil
 
-  azurerm_resource_groups.names.each do |rg_name|
+  if input('my_resource_groups').empty? ?
+    "azurerm_resource_groups.names.each do |rg_name|" :
+    "input('my_resource_groups).each.do |rg_name|"
     azurerm_key_vaults(resource_group: rg_name).names.each do |vault_name|
       describe azurerm_key_vault(resource_group: rg_name, vault_name: vault_name) do
         it { should have_soft_delete_enabled }

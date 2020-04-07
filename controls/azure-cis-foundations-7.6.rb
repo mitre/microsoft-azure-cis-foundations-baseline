@@ -60,7 +60,9 @@ endpoint protection tool for your OS."
 
   default_endpoint_protection_extensions = ["EndpointSecurity","TrendMicroDSA*","Antimalware","EndpointProtection","SCWPAgent","PortalProtectExtension*","FileSecurity*"]
 
-  azurerm_resource_groups.names.each do |rg_name|
+  if input('my_resource_groups').empty? ?
+    "azurerm_resource_groups.names.each do |rg_name|" :
+    "input('my_resource_groups).each.do |rg_name|"
     azurerm_virtual_machines(resource_group: rg_name).vm_names.each do |vm_name|
       describe azurerm_virtual_machine(resource_group: rg_name, name: vm_name) do
         it { should have_endpoint_protection_installed approved_endpoint_protection_extensions + default_endpoint_protection_extensions }
