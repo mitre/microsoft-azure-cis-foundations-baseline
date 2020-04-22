@@ -72,8 +72,15 @@ container name, using the below command
   tag responsibility: nil
   tag ia_controls: nil
 
-  describe "Currently, this operation is not supported in the stack." do
-    skip "Currently, this operation is not supported in the stack."
+  azurerm_resource_groups.names.each do |rg_name|
+    azurerm_storage_accounts(resource_group: rg_name).names.each do |sa_name|
+      azurerm_storage_account_blob_containers(resource_group: "Regression-Tests-RG", storage_account_name: "storagetarget").entries.each do |entry|
+        describe "Storage Account Container #{entry.Name}" do
+          subject { entry }
+          its("PublicAccess") { should cmp nil }
+        end
+      end
+    end
   end
 
 end

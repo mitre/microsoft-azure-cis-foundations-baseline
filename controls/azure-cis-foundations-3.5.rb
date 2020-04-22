@@ -46,14 +46,9 @@ recommendation.*
   tag responsibility: nil
   tag ia_controls: nil
 
-  azurerm_resource_groups.names.each do |rg_name|
-    azurerm_storage_accounts(resource_group: rg_name).names.each do |sa_name|
-      describe azurerm_storage_account(resource_group: rg_name, name: sa_name) do
-        #check if SAS exists
-        its('properties.supportsHttpsTrafficOnly') { should be true }
-      end
-    end
+  describe "At this point of time, there is no API/CLI mechanism available to programmatically conduct security assessment for this recommendation." do
+    skip "At this point of time, there is no API/CLI mechanism available to programmatically conduct security assessment for this recommendation."
   end
-
+  
 end
 

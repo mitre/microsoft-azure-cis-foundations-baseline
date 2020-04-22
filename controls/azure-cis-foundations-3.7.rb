@@ -66,12 +66,8 @@ access key or SAS token) to access the storage account."
   tag responsibility: nil
   tag ia_controls: nil
 
-  azurerm_resource_groups.names.each do |rg_name|
-    azurerm_storage_accounts(resource_group: rg_name).names.each do |sa_name|
-      describe azurerm_storage_account(resource_group: rg_name, name: sa_name) do
-        its('properties.networkAcls.virtualNetworkRules.action') { should eq 'Disabled' }
-      end
-    end
+  describe "At this point of time, storage account firewall rules have not been implemented for Azure Stack yet." do
+    skip "At this point of time, storage account firewall rules have not been implemented for Azure Stack yet."
   end
 
 end
