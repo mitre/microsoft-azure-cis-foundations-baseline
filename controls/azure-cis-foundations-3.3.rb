@@ -1,4 +1,4 @@
-control "azure-cis-9.2-control-3.3" do
+control "azure-cis-foundations-3.3" do
   title "Ensure Storage logging is enabled for Queue service for read, write,
 and delete requests"
   desc  "The Storage Queue service stores messages that may be read by any

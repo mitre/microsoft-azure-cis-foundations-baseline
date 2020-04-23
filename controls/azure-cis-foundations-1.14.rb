@@ -1,4 +1,4 @@
-control "azure-cis-9.2-control-1.14" do
+control "azure-cis-foundations-1.14" do
   title "Ensure that 'Guests can invite' is set to 'No'"
   desc  "Restrict guest invitations."
   desc  "rationale", "Restricting invitations to administrators ensures that
@@ -46,5 +46,9 @@ recommendation.*
   tag mitigation_controls: nil
   tag responsibility: nil
   tag ia_controls: nil
+
+  describe "At this point of time, there is no API/CLI mechanism available to programmatically conduct security assessment for this recommendation." do
+    skip "At this point of time, there is no API/CLI mechanism available to programmatically conduct security assessment for this recommendation."
+  end
 end
 

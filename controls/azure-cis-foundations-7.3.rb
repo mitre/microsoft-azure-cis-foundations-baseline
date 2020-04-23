@@ -1,4 +1,4 @@
-control "azure-cis-9.2-control-7.3" do
+control "azure-cis-foundations-7.3" do
   title "Ensure that 'Unattached disks' are encrypted"
   desc  "Ensure that unattached disks in a subscription are encrypted."
   desc  "rationale", "
@@ -82,5 +82,14 @@ documentation at:
   tag mitigation_controls: nil
   tag responsibility: nil
   tag ia_controls: nil
+
+  describe azurerm_virtual_machine_disks.where { attached == false } do
+    its('encryption_enabled') { should be true }
+  end
+
+  describe "This control is not yet implemented. Azure Stack has not yet implemented encrypting disk with your own keys." do
+    skip "This control is not yet implemented. Azure Stack has not yet implemented encrypting disk with your own keys."
+  end
+
 end
 

@@ -1,4 +1,4 @@
-control "azure-cis-9.2-control-9.3" do
+control "azure-cis-foundations-9.3" do
   title "Ensure web app is using the latest version of TLS encryption"
   desc  "The TLS(Transport Layer Security) protocol secures transmission of
 data over the internet using standard encryption technology. Encryption should
@@ -64,5 +64,9 @@ latest now)`.
   tag mitigation_controls: nil
   tag responsibility: nil
   tag ia_controls: nil
+
+  describe "This control has not been implemented yet. App Services is an Azure Cloud offering and has not yet been implemented for Azure Stack." do
+    skip "This control has not been implemented yet. App Services is an Azure Cloud offering and has not yet been implemented for Azure Stack."
+  end
 end
 

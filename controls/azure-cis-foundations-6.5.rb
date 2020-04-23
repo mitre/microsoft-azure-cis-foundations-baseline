@@ -1,4 +1,4 @@
-control "azure-cis-9.2-control-6.5" do
+control "azure-cis-foundations-6.5" do
   title "Ensure that Network Watcher is 'Enabled'"
   desc  "Enable Network Watcher for Azure subscriptions."
   desc  "rationale", "Network diagnostic and visualization tools available with
@@ -56,5 +56,9 @@ watcher in all regions`
   tag mitigation_controls: nil
   tag responsibility: nil
   tag ia_controls: nil
+
+  describe "This control is not yet implemented. Azure Stack has not yet implemented network watcher." do
+    skip "This control is not yet implemented. Azure Stack has not yet implemented network watcher."
+  end
 end
 

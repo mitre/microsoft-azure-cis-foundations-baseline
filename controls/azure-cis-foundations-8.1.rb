@@ -1,4 +1,4 @@
-control "azure-cis-9.2-control-8.1" do
+control "azure-cis-foundations-8.1" do
   title "Ensure that the expiration date is set on all keys"
   desc  "Ensure that all keys in Azure Key Vault have an expiration time set."
   desc  "rationale", "Azure Key Vault enables users to store and use
@@ -67,5 +67,16 @@ Y-m-d'T'H:M:S'Z'
   tag mitigation_controls: nil
   tag responsibility: nil
   tag ia_controls: nil
+
+  azurerm_resource_groups.names.each do |rg_name|
+    azurerm_key_vaults(resource_group: rg_name).names.each do |vault_name|
+      azurerm_key_vault_keys(vault_name).names.each do |key_name|
+        describe azurerm_key_vault_key(vault_name, key_name) do
+          it { should be_enabled }
+          it { should have_expiration_set }
+        end
+      end
+    end
+  end
 end
 

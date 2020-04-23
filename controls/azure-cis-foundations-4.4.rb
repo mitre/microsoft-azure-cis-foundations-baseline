@@ -1,4 +1,4 @@
-control "azure-cis-9.2-control-4.4" do
+control "azure-cis-foundations-4.4" do
   title "Ensure that 'Advanced Data Security' on a SQL server is set to 'On'"
   desc  "Enable \"Advanced Data Security\" on critical SQL Servers."
   desc  "rationale", "
@@ -84,5 +84,9 @@ enables `Advanced Data Security` for a SQL server
   tag mitigation_controls: nil
   tag responsibility: nil
   tag ia_controls: nil
+
+  describe "This control is not yet implemented. Azure Stack has not yet implemented sql databases as a service." do
+    skip "This control is not yet implemented. Azure Stack has not yet implemented sql databases as a service."
+  end
 end
 

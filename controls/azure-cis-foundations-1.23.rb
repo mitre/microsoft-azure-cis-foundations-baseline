@@ -1,4 +1,4 @@
-control "azure-cis-9.2-control-1.23" do
+control "azure-cis-foundations-1.23" do
   title "Ensure that no custom subscription owner roles are created"
   desc  "Subscription ownership should not include permission to create custom
 owner roles. The principle of least privilege should be followed and only
@@ -53,5 +53,16 @@ action of `*`
   tag mitigation_controls: nil
   tag responsibility: nil
   tag ia_controls: nil
+
+  azurerm_role_definitions.names.each do |id|
+    role_resource = azurerm_role_definition(name: id)
+    describe role_resource do
+      it { should_not have_assignable_scope "/" }
+    end if role_resource.permissions_allowed.include?("*")
+
+    describe role_resource do
+      it { should_not have_assignable_scope /\/subscriptions\/[0-9\-a-zA-z]*$/ }
+    end if role_resource.permissions_allowed.include?("*")
+  end
 end
 

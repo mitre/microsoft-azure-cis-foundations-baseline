@@ -1,4 +1,6 @@
-control "azure-cis-9.2-control-8.3" do
+mission_critical_resources = input("mission_critical_resources", value: [])
+
+control "azure-cis-foundations-8.3" do
   title "Ensure that Resource Locks are set for mission critical Azure
 resources"
   desc  "Resource Manager Locks provide a way for administrators to lock down
@@ -79,5 +81,13 @@ and its resource group name.
   tag mitigation_controls: nil
   tag responsibility: nil
   tag ia_controls: nil
+
+
+  mission_critical_resources.each do |resource_config|
+    describe azurerm_locks(id: resource_config[:id]) do
+      it { should exist }
+      it { should have_lock_level resource_config[:lock_level]}
+    end
+  end
 end
 

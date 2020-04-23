@@ -1,4 +1,4 @@
-control "azure-cis-9.2-control-9.7" do
+control "azure-cis-foundations-9.7" do
   title "Ensure that 'PHP version' is the latest, if used to run the web app"
   desc  "Periodically newer versions are released for PHP software either due
 to security flaws or to include additional functionality. Using the latest PHP
@@ -82,5 +82,9 @@ used by your web app.
   tag mitigation_controls: nil
   tag responsibility: nil
   tag ia_controls: nil
+
+  describe "This control has not been implemented yet. App Services is an Azure Cloud offering and has not yet been implemented for Azure Stack." do
+    skip "This control has not been implemented yet. App Services is an Azure Cloud offering and has not yet been implemented for Azure Stack."
+  end
 end
 

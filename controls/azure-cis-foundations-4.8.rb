@@ -1,4 +1,4 @@
-control "azure-cis-9.2-control-4.8" do
+control "azure-cis-foundations-4.8" do
   title "Ensure that Azure Active Directory Admin is configured"
   desc  "Use Azure Active Directory Authentication for authentication with SQL
 Database."
@@ -95,5 +95,9 @@ admin`
   tag mitigation_controls: nil
   tag responsibility: nil
   tag ia_controls: nil
+
+  describe "This control is not yet implemented. Azure Stack has not yet implemented sql databases as a service." do
+    skip "This control is not yet implemented. Azure Stack has not yet implemented sql databases as a service."
+  end
 end
 

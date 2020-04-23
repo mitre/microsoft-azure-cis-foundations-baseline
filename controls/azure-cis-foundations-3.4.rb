@@ -1,4 +1,4 @@
-control "azure-cis-9.2-control-3.4" do
+control "azure-cis-foundations-3.4" do
   title "Ensure that shared access signature tokens expire within an hour"
   desc  "Expire shared access signature tokens within an hour."
   desc  "rationale", "A shared access signature (SAS) is a URI that grants
@@ -36,9 +36,10 @@ end time such that it falls within an hour."
   tag responsibility: nil
   tag ia_controls: nil
 
-  describe "At this point of time, there is no API/CLI mechanism available to programmatically conduct security assessment for this recommendation." do
-    skip "At this point of time, there is no API/CLI mechanism available to programmatically conduct security assessment for this recommendation."
+
+  describe "Currently, SAS token expiration times cannot be audited. Until Microsoft makes token expiration time a setting rather than a token creation parameter, this recommendation would require a manual verification." do
+    skip "Currently, SAS token expiration times cannot be audited. Until Microsoft makes token expiration time a setting rather than a token creation parameter, this recommendation would require a manual verification."
   end
-  
+
 end
 

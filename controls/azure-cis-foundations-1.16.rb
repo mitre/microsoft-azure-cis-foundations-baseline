@@ -1,4 +1,4 @@
-control "azure-cis-9.2-control-1.16" do
+control "azure-cis-foundations-1.16" do
   title "Ensure that 'Self-service group management enabled' is set to 'No'"
   desc  "Restrict group creation to administrators only."
   desc  "rationale", "Self-service group management enables users to create and
@@ -47,5 +47,9 @@ recommendation.*
   tag mitigation_controls: nil
   tag responsibility: nil
   tag ia_controls: nil
+
+  describe "At this point of time, there is no API/CLI mechanism available to programmatically conduct security assessment for this recommendation." do
+    skip "At this point of time, there is no API/CLI mechanism available to programmatically conduct security assessment for this recommendation."
+  end
 end
 

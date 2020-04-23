@@ -1,4 +1,4 @@
-control "azure-cis-9.2-control-2.9" do
+control "azure-cis-foundations-2.9" do
   title "Ensure ASC Default policy setting \"Enable Next Generation
 Firewall(NGFW) Monitoring\" is not \"Disabled\""
   desc  "Enable next generation firewall recommendations for virtual machines."
@@ -64,5 +64,9 @@ Monitoring` to `AuditIfNotExists` or any other available value than `Disabled`
   tag mitigation_controls: nil
   tag responsibility: nil
   tag ia_controls: nil
+
+  describe "This control has not been implemented yet. Security Center is an Azure Cloud offering and has not yet been implemented for Azure Stack." do
+    skip "This control has not been implemented yet. Security Center is an Azure Cloud offering and has not yet been implemented for Azure Stack."
+  end
 end
 

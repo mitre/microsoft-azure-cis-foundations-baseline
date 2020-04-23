@@ -1,4 +1,4 @@
-control "azure-cis-9.2-control-5.1.2" do
+control "azure-cis-foundations-5.1.2" do
   title "Ensure that Activity Log Retention is set 365 days or greater"
   desc  "Ensure activity log retention is set for 365 days or greater."
   desc  "rationale", "A log profile controls how the activity log is exported
@@ -84,5 +84,9 @@ update log profile using CLI.
   tag mitigation_controls: nil
   tag responsibility: nil
   tag ia_controls: nil
+
+  describe "This control is not yet implemented. Azure Stack has not yet implemented exporting activity logs from azure stack." do
+    skip "This control is not yet implemented. Azure Stack has not yet implemented exporting activity logs from azure stack."
+  end
 end
 

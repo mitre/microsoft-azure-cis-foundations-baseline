@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-control 'azure-cis-9.2-control-7.1' do
+control 'azure-cis-foundations-7.1' do
   title "Ensure that 'OS disk' are encrypted"
   desc  'Ensure that OS disks (boot volumes) are encrypted, where possible.'
   desc  'rationale', "Encrypting the IaaS VM's OS disk (boot volume) ensures
@@ -59,12 +59,12 @@ https:///secrets//
   tag mitigation_controls: nil
   tag responsibility: nil
   tag ia_controls: nil
+  
+  # describe azurerm_virtual_machine_disks.where { properties.respond_to?(:osType) } do
+  #   its('encryption_enabled') { should be true }
+  # end
 
-  azurerm_resource_groups.names.each do |rg_name|
-    azurerm_virtual_machine_disks.names.each do |disk_name|
-      azurerm_virtual_machine_disk(resource_group: rg_name, name: disk_name) do
-        its('encryption_enabled') { should be true }
-      end
-    end
+  describe "This control is not yet implemented. Azure Stack has not yet implemented encrypting disk with your own keys." do
+    skip "This control is not yet implemented. Azure Stack has not yet implemented encrypting disk with your own keys."
   end
 end

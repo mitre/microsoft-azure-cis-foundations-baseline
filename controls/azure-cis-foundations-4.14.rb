@@ -1,4 +1,4 @@
-control "azure-cis-9.2-control-4.14" do
+control "azure-cis-foundations-4.14" do
   title "Ensure server parameter 'log_connections' is set to 'ON' for
 PostgreSQL Database Server"
   desc  "Enable `log_connections` on `PostgreSQL Servers`."
@@ -60,5 +60,9 @@ repair configuration errors and suboptimal performance."
   tag mitigation_controls: nil
   tag responsibility: nil
   tag ia_controls: nil
+
+  describe "This control is not yet implemented. Azure Stack has not yet implemented sql databases as a service." do
+    skip "This control is not yet implemented. Azure Stack has not yet implemented sql databases as a service."
+  end
 end
 

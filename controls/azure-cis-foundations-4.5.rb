@@ -1,4 +1,4 @@
-control "azure-cis-9.2-control-4.5" do
+control "azure-cis-foundations-4.5" do
   title "Ensure that 'Threat Detection types' is set to 'All'"
   desc  "Enable all types of threat detection on SQL servers."
   desc  "rationale", "Enabling all threat detection types protects against SQL
@@ -68,5 +68,9 @@ Types` is set to `All`
   tag mitigation_controls: nil
   tag responsibility: nil
   tag ia_controls: nil
+
+  describe "This control is not yet implemented. Azure Stack has not yet implemented sql databases as a service." do
+    skip "This control is not yet implemented. Azure Stack has not yet implemented sql databases as a service."
+  end
 end
 

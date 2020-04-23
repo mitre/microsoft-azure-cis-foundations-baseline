@@ -1,4 +1,6 @@
-control "azure-cis-9.2-control-7.4" do
+approved_extensions = input("approved_extensions", value: [])
+
+control "azure-cis-foundations-7.4" do
   title "Ensure that only approved extensions are installed"
   desc  "Only install organization-approved extensions on VMs."
   desc  "rationale", "Azure virtual machine extensions are small applications
@@ -64,5 +66,13 @@ below CLI command to remove an unapproved extension attached to VM.
   tag mitigation_controls: nil
   tag responsibility: nil
   tag ia_controls: nil
+
+  azurerm_resource_groups.names.each do |rg_name|
+    azurerm_virtual_machines(resource_group: rg_name).vm_names.each do |vm_name|
+      describe azurerm_virtual_machine(resource_group: rg_name, name: vm_name) do
+        it { should have_only_approved_extensions approved_extensions }
+      end
+    end
+  end
 end
 

@@ -1,4 +1,4 @@
-control "azure-cis-9.2-control-3.6" do
+control "azure-cis-foundations-3.6" do
   title "Ensure that 'Public access level' is set to Private for blob
 containers"
   desc  "Disable anonymous access to blob containers."
@@ -72,6 +72,7 @@ container name, using the below command
   tag responsibility: nil
   tag ia_controls: nil
 
+
   azurerm_resource_groups.names.each do |rg_name|
     azurerm_storage_accounts(resource_group: rg_name).names.each do |sa_name|
       azurerm_storage_account_blob_containers(resource_group: "Regression-Tests-RG", storage_account_name: "storagetarget").entries.each do |entry|
@@ -82,6 +83,7 @@ container name, using the below command
       end
     end
   end
+
 
 end
 

@@ -1,4 +1,4 @@
-control "azure-cis-9.2-control-3.7" do
+control "azure-cis-foundations-3.7" do
   title "Ensure default network access rule for Storage Accounts is set to deny"
   desc  "Restricting default network access helps to provide a new layer of
 security, since storage accounts accept connections from clients on any
@@ -66,8 +66,9 @@ access key or SAS token) to access the storage account."
   tag responsibility: nil
   tag ia_controls: nil
 
-  describe "At this point of time, storage account firewall rules have not been implemented for Azure Stack yet." do
-    skip "At this point of time, storage account firewall rules have not been implemented for Azure Stack yet."
+
+  describe "This control is not yet implemented. Azure Stack has not yet implemented firewall controls for storage accounts." do
+    skip "This control is not yet implemented. Azure Stack has not yet implemented firewall controls for storage accounts."
   end
 
 end

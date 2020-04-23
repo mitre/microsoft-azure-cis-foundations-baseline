@@ -1,4 +1,4 @@
-control "azure-cis-9.2-control-7.5" do
+control "azure-cis-foundations-7.5" do
   title "Ensure that the latest OS Patches for all Virtual Machines are applied"
   desc  "Ensure that the latest OS patches for all virtual machines are
 applied."
@@ -54,5 +54,9 @@ required security patches for your OS."
   tag mitigation_controls: nil
   tag responsibility: nil
   tag ia_controls: nil
+
+  describe "At this point of time, there is no API/CLI mechanism available to programmatically conduct security assessment for this recommendation." do
+    skip "At this point of time, there is no API/CLI mechanism available to programmatically conduct security assessment for this recommendation."
+  end
 end
 

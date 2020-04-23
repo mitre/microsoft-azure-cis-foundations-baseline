@@ -1,4 +1,4 @@
-control "azure-cis-9.2-control-5.1.5" do
+control "azure-cis-foundations-5.1.5" do
   title "Ensure the storage container storing the activity logs is not publicly
 accessible"
   desc  "The storage account container containing the activity log export
@@ -87,5 +87,9 @@ to `Private (no anonymous access)`
   tag mitigation_controls: nil
   tag responsibility: nil
   tag ia_controls: nil
+
+  describe "This control is not yet implemented. Azure Stack has not yet implemented exporting activity logs from azure stack." do
+    skip "This control is not yet implemented. Azure Stack has not yet implemented exporting activity logs from azure stack."
+  end
 end
 

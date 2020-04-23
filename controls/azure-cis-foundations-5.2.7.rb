@@ -1,4 +1,4 @@
-control "azure-cis-9.2-control-5.2.7" do
+control "azure-cis-foundations-5.2.7" do
   title "Ensure that Activity Log Alert exists for Delete Security Solution"
   desc  "Create an activity log alert for the Delete Security Solution event."
   desc  "rationale", "Monitoring for Delete Security Solution events gives
@@ -135,5 +135,9 @@ https://management.azure.com/subscriptions/$0/resourceGroups//providers/microsof
   tag mitigation_controls: nil
   tag responsibility: nil
   tag ia_controls: nil
+
+  describe "This control is not yet implemented. Azure Stack has not yet implemented Azure Monitor Alerts." do
+    skip "This control is not yet implemented. Azure Stack has not yet implemented Azure Monitor Alerts."
+  end
 end
 

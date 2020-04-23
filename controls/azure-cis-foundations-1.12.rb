@@ -1,4 +1,4 @@
-control "azure-cis-9.2-control-1.12" do
+control "azure-cis-foundations-1.12" do
   title "Ensure that 'Guest user permissions are limited' is set to 'Yes'"
   desc  "Limit guest user permissions."
   desc  "rationale", "Limiting guest access ensures that guest accounts do not
@@ -47,5 +47,9 @@ recommendation.*
   tag mitigation_controls: nil
   tag responsibility: nil
   tag ia_controls: nil
+
+  describe "At this point of time, there is no API/CLI mechanism available to programmatically conduct security assessment for this recommendation." do
+    skip "At this point of time, there is no API/CLI mechanism available to programmatically conduct security assessment for this recommendation."
+  end
 end
 

@@ -1,4 +1,4 @@
-control "azure-cis-9.2-control-8.4" do
+control "azure-cis-foundations-8.4" do
   title "Ensure the key vault is recoverable"
   desc  "The key vault contains object keys, secrets and certificates.
 Accidental unavailability of a key vault can cause immediate data loss or loss
@@ -100,5 +100,14 @@ properties.enableSoftDelete=true
   tag mitigation_controls: nil
   tag responsibility: nil
   tag ia_controls: nil
+
+  azurerm_resource_groups.names.each do |rg_name|
+    azurerm_key_vaults(resource_group: rg_name).names.each do |vault_name|
+      describe azurerm_key_vault(resource_group: rg_name, vault_name: vault_name) do
+        it { should have_soft_delete_enabled }
+        it { should have_purge_protection_enabled }
+      end
+    end
+  end
 end
 

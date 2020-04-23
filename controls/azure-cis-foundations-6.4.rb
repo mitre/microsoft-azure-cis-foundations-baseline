@@ -1,4 +1,4 @@
-control "azure-cis-9.2-control-6.4" do
+control "azure-cis-foundations-6.4" do
   title "Ensure that Network Security Group Flow Log retention period is
 'greater than 90 days'"
   desc  "Network Security Group Flow Logs should be enabled and the retention
@@ -68,5 +68,9 @@ equal to 90 days.
   tag mitigation_controls: nil
   tag responsibility: nil
   tag ia_controls: nil
+
+  describe "This control is not yet implemented. Azure Stack has not yet implemented network watcher." do
+    skip "This control is not yet implemented. Azure Stack has not yet implemented network watcher."
+  end
 end
 

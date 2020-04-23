@@ -1,4 +1,4 @@
-control "azure-cis-9.2-control-5.1.7" do
+control "azure-cis-foundations-5.1.7" do
   title "Ensure that logging for Azure KeyVault is 'Enabled'"
   desc  "Enable AuditEvent logging for key vault instances to ensure
 interactions with key vaults are logged and available."
@@ -73,5 +73,9 @@ Logging."
   tag mitigation_controls: nil
   tag responsibility: nil
   tag ia_controls: nil
+
+  describe "This control is not yet implemented. Azure Stack has not yet implemented exporting keyvault diagnostics logs from azure stack." do
+    skip "This control is not yet implemented. Azure Stack has not yet implemented exporting keyvault diagnostics logs from azure stack."
+  end
 end
 

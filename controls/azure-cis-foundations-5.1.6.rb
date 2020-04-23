@@ -1,4 +1,4 @@
-control "azure-cis-9.2-control-5.1.6" do
+control "azure-cis-foundations-5.1.6" do
   title "Ensure the storage account containing the container with activity logs
 is encrypted with BYOK (Use Your Own Key)"
   desc  "The storage account with the activity log export container is
@@ -84,5 +84,9 @@ encryption with your own key
   tag mitigation_controls: nil
   tag responsibility: nil
   tag ia_controls: nil
+
+  describe "This control is not yet implemented. Azure Stack has not yet implemented exporting activity logs from azure stack." do
+    skip "This control is not yet implemented. Azure Stack has not yet implemented exporting activity logs from azure stack."
+  end
 end
 

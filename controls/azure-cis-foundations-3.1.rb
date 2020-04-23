@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-control 'azure-cis-9.2-control-3.1' do
+control 'azure-cis-foundations-3.1' do
   title "Ensure that 'Secure transfer required' is set to 'Enabled'"
   desc  'Enable data encryption is transit.'
   desc  'rationale', "The secure transfer option enhances the security of a
@@ -72,6 +72,14 @@ Account`
     azurerm_storage_accounts(resource_group: rg_name).names.each do |sa_name|
       describe azurerm_storage_account(resource_group: rg_name, name: sa_name) do
         its('properties.supportsHttpsTrafficOnly') { should be true }
+      end
+    end
+  end
+
+  azurerm_resource_groups.names.each do |rg_name|
+    azurerm_storage_accounts(resource_group: rg_name).names.each do |sa_name|
+      describe azurerm_storage_account(resource_group: rg_name, name: sa_name) do
+        its('properties.encryption.services.blob.enabled') { should eq true }
       end
     end
   end

@@ -1,4 +1,4 @@
-control "azure-cis-9.2-control-2.6" do
+control "azure-cis-foundations-2.6" do
   title "Ensure ASC Default policy setting \"Monitor Disk Encryption\" is not
 \"Disabled\""
   desc  "Enable Disk encryption recommendations for virtual machines."
@@ -63,5 +63,9 @@ https://management.azure.com/subscriptions/$0/providers/Microsoft.Authorization/
   tag mitigation_controls: nil
   tag responsibility: nil
   tag ia_controls: nil
+
+  describe "This control has not been implemented yet. Security Center is an Azure Cloud offering and has not yet been implemented for Azure Stack." do
+    skip "This control has not been implemented yet. Security Center is an Azure Cloud offering and has not yet been implemented for Azure Stack."
+  end
 end
 

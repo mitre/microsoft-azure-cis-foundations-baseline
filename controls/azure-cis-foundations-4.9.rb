@@ -1,4 +1,4 @@
-control "azure-cis-9.2-control-4.9" do
+control "azure-cis-foundations-4.9" do
   title "Ensure that 'Data encryption' is set to 'On' on a SQL Database"
   desc  "Enable Transparent Data Encryption on every SQL server."
   desc  "rationale", "Azure SQL Database transparent data encryption helps
@@ -60,5 +60,9 @@ instance.
   tag mitigation_controls: nil
   tag responsibility: nil
   tag ia_controls: nil
+
+  describe "This control is not yet implemented. Azure Stack has not yet implemented sql databases as a service." do
+    skip "This control is not yet implemented. Azure Stack has not yet implemented sql databases as a service."
+  end
 end
 

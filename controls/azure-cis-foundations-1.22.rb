@@ -1,4 +1,4 @@
-control "azure-cis-9.2-control-1.22" do
+control "azure-cis-foundations-1.22" do
   title "Ensure that 'Require Multi-Factor Auth to join devices' is set to
 'Yes'"
   desc  "Joining devices to the active directory should require Multi-factor
@@ -50,5 +50,9 @@ recommendation.*
   tag mitigation_controls: nil
   tag responsibility: nil
   tag ia_controls: nil
+
+  describe "At this point of time, there is no API/CLI mechanism available to programmatically conduct security assessment for this recommendation." do
+    skip "At this point of time, there is no API/CLI mechanism available to programmatically conduct security assessment for this recommendation."
+  end
 end
 

@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-control 'azure-cis-9.2-control-6.2' do
+control 'azure-cis-foundations-6.2' do
   title 'Ensure that SSH access is restricted from the internet'
   desc  'Disable SSH access on network security groups from the Internet.'
   desc  'rationale', "The potential security problem with using SSH over the
@@ -75,7 +75,7 @@ VPN](https://docs.microsoft.com/en-us/azure/vpn-gateway/vpn-gateway-howto-site-t
   tag ia_controls: nil
 
   azurerm_resource_groups.names.each do |rg_name|
-    azurerm_network_security_group(resource_group: rg_name).names.each do |nsg_name|
+    azurerm_network_security_groups(resource_group: rg_name).names.each do |nsg_name|
       describe azurerm_network_security_group(resource_group: rg_name, name: nsg_name) do
         it { should_not allow_ssh_from_internet }
       end

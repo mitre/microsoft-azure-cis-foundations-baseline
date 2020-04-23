@@ -1,4 +1,4 @@
-control "azure-cis-9.2-control-8.5" do
+control "azure-cis-foundations-8.5" do
   title "Enable role-based access control (RBAC) within Azure Kubernetes
 Services"
   desc  "Ensure that RBAC is enabled on all Azure Kubernetes Services Instances"
@@ -44,5 +44,9 @@ cluster will require recreation."
   tag mitigation_controls: nil
   tag responsibility: nil
   tag ia_controls: nil
+
+  describe "This control has not been implemented yet. Azure Kubernetes Services is an Azure Cloud offering and has not yet been implemented for Azure Stack." do
+    skip "This control has not been implemented yet. Azure Kubernetes Services is an Azure Cloud offering and has not yet been implemented for Azure Stack."
+  end
 end
 

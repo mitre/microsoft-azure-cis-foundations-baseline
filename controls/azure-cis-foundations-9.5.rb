@@ -1,4 +1,4 @@
-control "azure-cis-9.2-control-9.5" do
+control "azure-cis-foundations-9.5" do
   title "Ensure that Register with Azure Active Directory is enabled on App
 Service"
   desc  "Managed service identity in App Service makes the app more secure by
@@ -70,5 +70,9 @@ run the following command:
   tag mitigation_controls: nil
   tag responsibility: nil
   tag ia_controls: nil
+
+  describe "This control has not been implemented yet. App Services is an Azure Cloud offering and has not yet been implemented for Azure Stack." do
+    skip "This control has not been implemented yet. App Services is an Azure Cloud offering and has not yet been implemented for Azure Stack."
+  end
 end
 

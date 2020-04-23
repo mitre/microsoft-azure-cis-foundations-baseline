@@ -1,4 +1,4 @@
-control "azure-cis-9.2-control-9.4" do
+control "azure-cis-foundations-9.4" do
   title "Ensure the web app has 'Client Certificates (Incoming client
 certificates)' set to 'On'"
   desc  "Client certificates allow for the app to request a certificate for
@@ -69,5 +69,9 @@ following command:
   tag mitigation_controls: nil
   tag responsibility: nil
   tag ia_controls: nil
+
+  describe "This control has not been implemented yet. App Services is an Azure Cloud offering and has not yet been implemented for Azure Stack." do
+    skip "This control has not been implemented yet. App Services is an Azure Cloud offering and has not yet been implemented for Azure Stack."
+  end
 end
 

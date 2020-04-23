@@ -1,4 +1,4 @@
-control "azure-cis-9.2-control-4.6" do
+control "azure-cis-foundations-4.6" do
   title "Ensure that 'Send alerts to' is set"
   desc  "Provide the email address where alerts will be sent when anomalous
 activities are detected on SQL servers."
@@ -70,5 +70,9 @@ id`.
   tag mitigation_controls: nil
   tag responsibility: nil
   tag ia_controls: nil
+
+  describe "This control is not yet implemented. Azure Stack has not yet implemented sql databases as a service." do
+    skip "This control is not yet implemented. Azure Stack has not yet implemented sql databases as a service."
+  end
 end
 

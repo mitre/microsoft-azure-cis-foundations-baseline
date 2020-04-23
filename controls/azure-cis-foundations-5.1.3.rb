@@ -1,4 +1,4 @@
-control "azure-cis-9.2-control-5.1.3" do
+control "azure-cis-foundations-5.1.3" do
   title "Ensure audit profile captures all the activities"
   desc  "The log profile should be configured to export all activities from the
 control/management plane."
@@ -54,5 +54,9 @@ update existing default log profile.
   tag mitigation_controls: nil
   tag responsibility: nil
   tag ia_controls: nil
+
+  describe "This control is not yet implemented. Azure Stack has not yet implemented exporting activity logs from azure stack." do
+    skip "This control is not yet implemented. Azure Stack has not yet implemented exporting activity logs from azure stack."
+  end
 end
 

@@ -1,4 +1,4 @@
-control "azure-cis-9.2-control-3.8" do
+control "azure-cis-foundations-3.8" do
   title "Ensure 'Trusted Microsoft Services' is enabled for Storage Account
 access"
   desc  "Some Microsoft services that interact with storage accounts operate
@@ -73,8 +73,9 @@ storage account`.
   tag responsibility: nil
   tag ia_controls: nil
 
-  describe "At this point of time, storage account firewall rules have not been implemented for Azure Stack yet." do
-    skip "At this point of time, storage account firewall rules have not been implemented for Azure Stack yet."
+
+  describe "This control is not yet implemented. Azure Stack has not yet implemented firewall controls for storage accounts." do
+    skip "This control is not yet implemented. Azure Stack has not yet implemented firewall controls for storage accounts."
   end
 
 

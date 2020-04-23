@@ -1,4 +1,4 @@
-control "azure-cis-9.2-control-7.2" do
+control "azure-cis-foundations-7.2" do
   title "Ensure that 'Data disks' are encrypted"
   desc  "Ensure that data disks (non-boot volumes) are encrypted, where
 possible."
@@ -59,5 +59,12 @@ https:///secrets//
   tag mitigation_controls: nil
   tag responsibility: nil
   tag ia_controls: nil
-end
 
+  # describe azurerm_virtual_machine_disks.where { !properties.respond_to?(:osType) } do
+  #   its('encryption_enabled') { should be true }
+  # end
+
+  describe "This control is not yet implemented. Azure Stack has not yet implemented encrypting disk with your own keys." do
+    skip "This control is not yet implemented. Azure Stack has not yet implemented encrypting disk with your own keys."
+  end
+end

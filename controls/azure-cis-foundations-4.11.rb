@@ -1,4 +1,4 @@
-control "azure-cis-9.2-control-4.11" do
+control "azure-cis-foundations-4.11" do
   title "Ensure 'Enforce SSL connection' is set to 'ENABLED' for MySQL Database
 Server"
   desc  "Enable `SSL connection` on `MYSQL` Servers."
@@ -60,5 +60,9 @@ sslEnforcement
   tag mitigation_controls: nil
   tag responsibility: nil
   tag ia_controls: nil
+
+  describe "This control is not yet implemented. Azure Stack has not yet implemented sql databases as a service." do
+    skip "This control is not yet implemented. Azure Stack has not yet implemented sql databases as a service."
+  end
 end
 

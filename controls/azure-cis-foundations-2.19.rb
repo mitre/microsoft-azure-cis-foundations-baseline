@@ -1,4 +1,4 @@
-control "azure-cis-9.2-control-2.19" do
+control "azure-cis-foundations-2.19" do
   title "Ensure that 'Send email also to subscription owners' is set to 'On'"
   desc  "Enable security alert emails to subscription owners."
   desc  "rationale", "Enabling security alert emails to subscription owners
@@ -94,5 +94,9 @@ https://management.azure.com/subscriptions/$0/providers/Microsoft.Security/secur
   tag mitigation_controls: nil
   tag responsibility: nil
   tag ia_controls: nil
+
+  describe "This control has not been implemented yet. Security Center is an Azure Cloud offering and has not yet been implemented for Azure Stack." do
+    skip "This control has not been implemented yet. Security Center is an Azure Cloud offering and has not yet been implemented for Azure Stack."
+  end
 end
 

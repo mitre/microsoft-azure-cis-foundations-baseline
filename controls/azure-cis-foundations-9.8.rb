@@ -1,4 +1,4 @@
-control "azure-cis-9.2-control-9.8" do
+control "azure-cis-foundations-9.8" do
   title "Ensure that 'Python version' is the latest, if used to run the web app"
   desc  "Periodically, newer versions are released for Python software either
 due to security flaws or to include additional functionality. Using the latest
@@ -81,5 +81,9 @@ is not used by your web app.
   tag mitigation_controls: nil
   tag responsibility: nil
   tag ia_controls: nil
+
+  describe "This control has not been implemented yet. App Services is an Azure Cloud offering and has not yet been implemented for Azure Stack." do
+    skip "This control has not been implemented yet. App Services is an Azure Cloud offering and has not yet been implemented for Azure Stack."
+  end
 end
 

@@ -1,4 +1,4 @@
-control "azure-cis-9.2-control-5.2.4" do
+control "azure-cis-foundations-5.2.4" do
   title "Ensure that Activity Log Alert exists for Create or Update Network
 Security Group Rule"
   desc  "Create an activity log alert for the Create or Update Network Security
@@ -140,5 +140,9 @@ https://management.azure.com/subscriptions/$0/resourceGroups//providers/microsof
   tag mitigation_controls: nil
   tag responsibility: nil
   tag ia_controls: nil
+
+  describe "This control is not yet implemented. Azure Stack has not yet implemented Azure Monitor Alerts." do
+    skip "This control is not yet implemented. Azure Stack has not yet implemented Azure Monitor Alerts."
+  end
 end
 

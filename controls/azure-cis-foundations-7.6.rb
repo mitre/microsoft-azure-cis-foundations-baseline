@@ -1,4 +1,6 @@
-control "azure-cis-9.2-control-7.6" do
+approved_endpoint_protection_extensions = input("approved_endpoint_protection_extensions", value: [])
+
+control "azure-cis-foundations-7.6" do
   title "Ensure that the endpoint protection for all Virtual Machines is
 installed"
   desc  "Install endpoint protection for all virtual machines."
@@ -55,5 +57,15 @@ endpoint protection tool for your OS."
   tag mitigation_controls: nil
   tag responsibility: nil
   tag ia_controls: nil
+
+  default_endpoint_protection_extensions = ["EndpointSecurity","TrendMicroDSA*","Antimalware","EndpointProtection","SCWPAgent","PortalProtectExtension*","FileSecurity*"]
+
+  azurerm_resource_groups.names.each do |rg_name|
+    azurerm_virtual_machines(resource_group: rg_name).vm_names.each do |vm_name|
+      describe azurerm_virtual_machine(resource_group: rg_name, name: vm_name) do
+        it { should have_endpoint_protection_installed approved_endpoint_protection_extensions + default_endpoint_protection_extensions }
+      end
+    end
+  end
 end
 

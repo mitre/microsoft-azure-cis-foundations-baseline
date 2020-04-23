@@ -1,4 +1,4 @@
-control "azure-cis-9.2-control-6.3" do
+control "azure-cis-foundations-6.3" do
   title "Ensure no SQL Databases allow ingress 0.0.0.0/0 (ANY IP)"
   desc  "Ensure that no SQL Databases allow ingress from 0.0.0.0/0 (ANY IP)."
   desc  "rationale", "
@@ -93,5 +93,9 @@ which allows access to wider public IP ranges including Windows Azure IP ranges.
   tag mitigation_controls: nil
   tag responsibility: nil
   tag ia_controls: nil
+
+  describe "This control is not yet implemented. Azure Stack has not yet implemented sql databases as a service." do
+    skip "This control is not yet implemented. Azure Stack has not yet implemented sql databases as a service."
+  end
 end
 

@@ -1,4 +1,4 @@
-control "azure-cis-9.2-control-2.17" do
+control "azure-cis-foundations-2.17" do
   title "Ensure that security contact 'Phone number' is set"
   desc  "Provide a security contact phone number."
   desc  "rationale", "
@@ -99,5 +99,9 @@ https://management.azure.com/subscriptions/$0/providers/Microsoft.Security/secur
   tag mitigation_controls: nil
   tag responsibility: nil
   tag ia_controls: nil
+
+  describe "This control has not been implemented yet. Security Center is an Azure Cloud offering and has not yet been implemented for Azure Stack." do
+    skip "This control has not been implemented yet. Security Center is an Azure Cloud offering and has not yet been implemented for Azure Stack."
+  end
 end
 

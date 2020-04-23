@@ -1,4 +1,4 @@
-control "azure-cis-9.2-control-8.2" do
+control "azure-cis-foundations-8.2" do
   title "Ensure that the expiration date is set on all Secrets"
   desc  "Ensure that all Secrets in the Azure Key Vault have an expiration time
 set."
@@ -69,5 +69,16 @@ Y-m-d'T'H:M:S'Z'
   tag mitigation_controls: nil
   tag responsibility: nil
   tag ia_controls: nil
+
+  azurerm_resource_groups.names.each do |rg_name|
+    azurerm_key_vaults(resource_group: rg_name).names.each do |vault_name|
+      azurerm_key_vault_secrets(vault_name).names.each do |secret_name|
+        describe azurerm_key_vault_secret(vault_name, secret_name) do
+          it { should be_enabled }
+          it { should have_expiration_set }
+        end
+      end
+    end
+  end
 end
 
