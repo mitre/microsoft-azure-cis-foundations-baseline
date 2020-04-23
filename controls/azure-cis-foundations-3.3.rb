@@ -81,5 +81,16 @@ rwd --retention 90
   tag responsibility: nil
   tag ia_controls: nil
 
+<<<<<<< Updated upstream
+=======
+  azurerm_resource_groups.names.each do |rg_name|
+    azurerm_storage_accounts(resource_group: rg_name).names.each do |sa_name|
+      describe azurerm_storage_account_queues(resource_group: rg_name, storage_account_name: sa_name) do
+        it { should exist }
+        its('names') { should eq('logs') }
+      end
+    end
+  end
+>>>>>>> Stashed changes
 end
 
