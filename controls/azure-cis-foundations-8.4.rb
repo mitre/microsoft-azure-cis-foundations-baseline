@@ -1,3 +1,5 @@
+my_resource_groups = input('my_resource_groups', value: [])
+
 control "azure-cis-foundations-8.4" do
   title "Ensure the key vault is recoverable"
   desc  "The key vault contains object keys, secrets and certificates.
@@ -101,14 +103,28 @@ properties.enableSoftDelete=true
   tag responsibility: nil
   tag ia_controls: nil
 
-  if input('my_resource_groups').empty? ?
-    "azurerm_resource_groups.names.each do |rg_name|" :
-    "input('my_resource_groups).each.do |rg_name|"
-    azurerm_key_vaults(resource_group: rg_name).names.each do |vault_name|
+  rgs = my_resource_groups.empty? ? azurerm_resource_groups.names : my_resource_groups
+
+  rgs.each do |rg_name|
+    vaults = azurerm_key_vaults(resource_group: rg_name).names
+    if vaults.empty?
+      impact 0
+      describe "No key vaults were found in resource group #{rg_name} and therefore this control is not applicable. If you think this is an error, there may be an issue with the inspec-azure resource pack or the provided azure credentials." do
+        skip "No key vaults were found in resource group #{rg_name} and therefore this control is not applicable. If you think this is an error, there may be an issue with the inspec-azure resource pack or the provided azure credentials."
+      end
+    end
+    vaults.each do |vault_name|
       describe azurerm_key_vault(resource_group: rg_name, vault_name: vault_name) do
         it { should have_soft_delete_enabled }
         it { should have_purge_protection_enabled }
       end
+    end
+  end
+
+  if rgs.empty?
+    impact 0
+    describe "No resources groups were found and therefore this control is not applicable. If you think this is an error, ensure that my_resource_groups is set correctly or that there are resource groups in the specified subscription." do
+      skip "No resources groups were found and therefore this control is not applicable. If you think this is an error, ensure that my_resource_groups is set correctly or that there are resource groups in the specified subscription."
     end
   end
 end

@@ -1,4 +1,5 @@
 mission_critical_resources = input("mission_critical_resources", value: [])
+my_resource_groups = input('my_resource_groups', value: [])
 
 control "azure-cis-foundations-8.3" do
   title "Ensure that Resource Locks are set for mission critical Azure
@@ -82,11 +83,19 @@ and its resource group name.
   tag responsibility: nil
   tag ia_controls: nil
 
+  rgs = my_resource_groups.empty? ? azurerm_resource_groups.names : my_resource_groups
 
   mission_critical_resources.each do |resource_config|
     describe azurerm_locks(id: resource_config[:id]) do
       it { should exist }
       it { should have_lock_level resource_config[:lock_level]}
+    end
+  end
+
+  if mission_critical_resources.empty?
+    all_locks = rgs.map { |rg| azurerm_locks(resource_group: rg).entries }.flatten(1)
+    describe "No mission critical resoruces were configured. Therefore, review the following information to ensure that the locks are configured correctly.\n#{all_locks}" do
+      skip "No mission critical resoruces were configured. Therefore, review the following information to ensure that the locks are configured correctly.\n#{all_locks}"
     end
   end
 end

@@ -1,3 +1,5 @@
+my_resource_groups = input('my_resource_groups', value: [])
+
 control "azure-cis-foundations-3.2" do
   title "Ensure that storage account access keys are periodically regenerated"
   desc  "Regenerate storage account access keys periodically."
@@ -70,13 +72,20 @@ account access keys."
   tag responsibility: nil
   tag ia_controls: nil
 
-  if input('my_resource_groups').empty? ?
-    "azurerm_resource_groups.names.each do |rg_name|" :
-    "input('my_resource_groups).each.do |rg_name|"
+  rgs = my_resource_groups.empty? ? azurerm_resource_groups.names : my_resource_groups
+  
+  rgs.each do |rg_name|
     azurerm_storage_accounts(resource_group: rg_name).names.each do |sa_name|
       describe azurerm_storage_account(resource_group: rg_name, name: sa_name) do
         its('has_recently_generated_access_key?') {should be true}
       end
+    end
+  end
+
+  if rgs.empty?
+    impact 0
+    describe "No resources groups were found and therefore this control is not applicable. If you think this is an error, ensure that my_resource_groups is set correctly or that there are resource groups in the specified subscription." do
+      skip "No resources groups were found and therefore this control is not applicable. If you think this is an error, ensure that my_resource_groups is set correctly or that there are resource groups in the specified subscription."
     end
   end
 

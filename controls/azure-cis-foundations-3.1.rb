@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+my_resource_groups = input('my_resource_groups', value: [])
 
 control 'azure-cis-foundations-3.1' do
   title "Ensure that 'Secure transfer required' is set to 'Enabled'"
@@ -67,9 +68,10 @@ Account`
   tag mitigation_controls: nil
   tag responsibility: nil
   tag ia_controls: nil
-  if input('my_resource_groups').empty? ?
-    "azurerm_resource_groups.names.each do |rg_name|" :
-    "input('my_resource_groups).each.do |rg_name|"
+
+  rgs = my_resource_groups.empty? ? azurerm_resource_groups.names :  my_resource_groups
+
+  rgs.each do |rg_name|
     azurerm_storage_accounts(resource_group: rg_name).names.each do |sa_name|
       describe azurerm_storage_account(resource_group: rg_name, name: sa_name) do
         its('properties.supportsHttpsTrafficOnly') { should be true }
@@ -77,13 +79,18 @@ Account`
     end
   end
 
-  if input('my_resource_groups').empty? ?
-    "azurerm_resource_groups.names.each do |rg_name|" :
-    "input('my_resource_groups).each.do |rg_name|"
+  rgs.each do |rg_name|
     azurerm_storage_accounts(resource_group: rg_name).names.each do |sa_name|
       describe azurerm_storage_account(resource_group: rg_name, name: sa_name) do
         its('properties.encryption.services.blob.enabled') { should eq true }
       end
+    end
+  end
+
+  if rgs.empty?
+    impact 0
+    describe "No resources groups were found and therefore this control is not applicable. If you think this is an error, ensure that my_resource_groups is set correctly or that there are resource groups in the specified subscription." do
+      skip "No resources groups were found and therefore this control is not applicable. If you think this is an error, ensure that my_resource_groups is set correctly or that there are resource groups in the specified subscription."
     end
   end
 end
