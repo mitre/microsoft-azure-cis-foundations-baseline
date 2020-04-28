@@ -1,3 +1,5 @@
+my_resource_groups = input('my_resource_groups', value: [])
+
 control "azure-cis-foundations-3.6" do
   title "Ensure that 'Public access level' is set to Private for blob
 containers"
@@ -72,18 +74,25 @@ container name, using the below command
   tag responsibility: nil
   tag ia_controls: nil
 
+  rgs = my_resource_groups.empty? ? azurerm_resource_groups.names : my_resource_groups
 
-  azurerm_resource_groups.names.each do |rg_name|
+  rgs.each do |rg_name|
     azurerm_storage_accounts(resource_group: rg_name).names.each do |sa_name|
-      azurerm_storage_account_blob_containers(resource_group: "Regression-Tests-RG", storage_account_name: "storagetarget").entries.each do |entry|
-        describe "Storage Account Container #{entry.Name}" do
+      azurerm_storage_account_blob_containers(resource_group: rg_name, storage_account_name: sa_name).entries.each do |entry|
+        describe "Storage Account Container #{entry.name}" do
           subject { entry }
-          its("PublicAccess") { should cmp nil }
+          its("public_access") { should cmp nil }
         end
       end
     end
   end
 
+  if rgs.empty?
+    impact 0
+    describe "No resources groups were found and therefore this control is not applicable. If you think this is an error, ensure that my_resource_groups is set correctly or that there are resource groups in the specified subscription." do
+      skip "No resources groups were found and therefore this control is not applicable. If you think this is an error, ensure that my_resource_groups is set correctly or that there are resource groups in the specified subscription."
+    end
+  end
 
 end
 

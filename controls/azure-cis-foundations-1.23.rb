@@ -54,7 +54,8 @@ action of `*`
   tag responsibility: nil
   tag ia_controls: nil
 
-  azurerm_role_definitions.names.each do |id|
+  defs = azurerm_role_definitions.names
+  defs.each do |id|
     role_resource = azurerm_role_definition(name: id)
     describe role_resource do
       it { should_not have_assignable_scope "/" }
@@ -63,6 +64,12 @@ action of `*`
     describe role_resource do
       it { should_not have_assignable_scope /\/subscriptions\/[0-9\-a-zA-z]*$/ }
     end if role_resource.permissions_allowed.include?("*")
+  end
+
+  if defs.empty?
+    describe "No role definitions were found. If you think this is an error, there may be an issue with the inspec-azure resource pack or the supplied azure credentials." do
+      skip "No role definitions were found. If you think this is an error, there may be an issue with the inspec-azure resource pack or the supplied azure credentials."
+    end
   end
 end
 

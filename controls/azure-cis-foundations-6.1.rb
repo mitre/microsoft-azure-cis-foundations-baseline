@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+my_resource_groups = input('my_resource_groups', value: [])
 
 control 'azure-cis-foundations-6.1' do
   title 'Ensure that RDP access is restricted from the internet'
@@ -74,11 +75,20 @@ VPN](https://docs.microsoft.com/en-us/azure/vpn-gateway/vpn-gateway-howto-site-t
   tag responsibility: nil
   tag ia_controls: nil
 
-  azurerm_resource_groups.names.each do |rg_name|
+  rgs = my_resource_groups.empty? ? azurerm_resource_groups.names : my_resource_groups
+  
+  rgs.each do |rg_name|
     azurerm_network_security_groups(resource_group: rg_name).names.each do |nsg_name|
       describe azurerm_network_security_group(resource_group: rg_name, name: nsg_name) do
         it { should_not allow_rdp_from_internet }
       end
+    end
+  end
+
+  if rgs.empty?
+    impact 0
+    describe "No resources groups were found and therefore this control is not applicable. If you think this is an error, ensure that my_resource_groups is set correctly or that there are resource groups in the specified subscription." do
+      skip "No resources groups were found and therefore this control is not applicable. If you think this is an error, ensure that my_resource_groups is set correctly or that there are resource groups in the specified subscription."
     end
   end
 end

@@ -1,4 +1,5 @@
 approved_endpoint_protection_extensions = input("approved_endpoint_protection_extensions", value: [])
+my_resource_groups = input('my_resource_groups', value: [])
 
 control "azure-cis-foundations-7.6" do
   title "Ensure that the endpoint protection for all Virtual Machines is
@@ -60,11 +61,20 @@ endpoint protection tool for your OS."
 
   default_endpoint_protection_extensions = ["EndpointSecurity","TrendMicroDSA*","Antimalware","EndpointProtection","SCWPAgent","PortalProtectExtension*","FileSecurity*"]
 
-  azurerm_resource_groups.names.each do |rg_name|
+  rgs = my_resource_groups.empty? ? azurerm_resource_groups.names : my_resource_groups
+
+  rgs.each do |rg_name|
     azurerm_virtual_machines(resource_group: rg_name).vm_names.each do |vm_name|
       describe azurerm_virtual_machine(resource_group: rg_name, name: vm_name) do
         it { should have_endpoint_protection_installed approved_endpoint_protection_extensions + default_endpoint_protection_extensions }
       end
+    end
+  end
+
+  if rgs.empty?
+    impact 0
+    describe "No resources groups were found and therefore this control is not applicable. If you think this is an error, ensure that my_resource_groups is set correctly or that there are resource groups in the specified subscription." do
+      skip "No resources groups were found and therefore this control is not applicable. If you think this is an error, ensure that my_resource_groups is set correctly or that there are resource groups in the specified subscription."
     end
   end
 end
